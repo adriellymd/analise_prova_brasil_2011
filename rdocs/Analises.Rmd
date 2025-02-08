@@ -1,6 +1,8 @@
 ---
 title: "Análise Prova Brasil 2011"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 ```{r setup, include=FALSE}

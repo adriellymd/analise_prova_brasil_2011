@@ -1757,106 +1757,212 @@ display: none;
 <p>Lendo os dados:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0d2QoXCIuLlwiKSAjIGFjZXNzYXIgb3MgZGFkb3NcbmFycXVpdm8gPC0gXCJkYWRvcy9BbW9zdHJhX2cwMV9BZHJpZWxseV9BbWFuZGFfRXJpY2tfUmFxdWVsLnhsc3hcIlxuYXJxdWl2b19hbW9zdHJhIDwtIFwiZGFkb3MvQW1vc3RyYV81MF9saW5oYXMueGxzeFwiXG5cbiMgdmFyacOhdmVpcyBnbG9iYWlzXG5kYWRvcyA8LSByZWFkX2V4Y2VsKGFycXVpdm8pICMgY2FzbyBxdWVyaWEgdGVzdGFyIHBhcmEgYSBhbW9zdHJhXG5uIDwtIG5yb3coZGFkb3MpICMgY2FzbyBhIGFtb3N0cmEgc2VqYSBhbHRlcmFkYVxuaWMgPC0gMS45NiAjIGRlZmluaSBjb20gOTUlXG5gYGAifQ== -->
-<pre class="r"><code>setwd(&quot;..&quot;) # acessar os dados
-arquivo &lt;- &quot;dados/Amostra_g01_Adrielly_Amanda_Erick_Raquel.xlsx&quot;
-arquivo_amostra &lt;- &quot;dados/Amostra_50_linhas.xlsx&quot;
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc2V0d2QoXFwuLlxcKSAjIGFjZXNzYXIgb3MgZGFkb3NcbmFycXVpdm8gPC0gXFxkYWRvcy9BbW9zdHJhX2cwMV9BZHJpZWxseV9BbWFuZGFfRXJpY2tfUmFxdWVsLnhsc3hcXFxuYXJxdWl2b19hbW9zdHJhIDwtIFxcZGFkb3MvQW1vc3RyYV81MF9saW5oYXMueGxzeFxcXG5cbiMgdmFyacOhdmVpcyBnbG9iYWlzXG5kYWRvcyA8LSByZWFkX2V4Y2VsKGFycXVpdm8pICMgY2FzbyBxdWVyaWEgdGVzdGFyIHBhcmEgYSBhbW9zdHJhXG5uIDwtIG5yb3coZGFkb3MpICMgY2FzbyBhIGFtb3N0cmEgc2VqYSBhbHRlcmFkYVxuaWMgPC0gMS45NiAjIGRlZmluaSBjb20gOTUlXG5gYGBcbmBgYCJ9 -->
+<pre class="r"><code>```r
+setwd(\..\) # acessar os dados
+arquivo &lt;- \dados/Amostra_g01_Adrielly_Amanda_Erick_Raquel.xlsx\
+arquivo_amostra &lt;- \dados/Amostra_50_linhas.xlsx\
 
 # variáveis globais
 dados &lt;- read_excel(arquivo) # caso queria testar para a amostra
 n &lt;- nrow(dados) # caso a amostra seja alterada
 ic &lt;- 1.96 # defini com 95%</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Descrever as características das escolas e o desempenho de seus
-estudantes na Prova de Brasil em 2011.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI05VTExcbmBgYCJ9 -->
-<pre class="r"><code>#NULL</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Estimar a proporção de escolas que menos de 75% de seus estudantes
-participaram da Prova Brasil em 2011.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGFkb3MkQkFJWEFfUEFSVElDSVBBQ0FPIDwtIGRhZG9zJFBBUlRJQ0lQQUNBTyA8IDc1XG5wcm9wb3JjYW8gPC0gbWVhbihkYWRvcyRCQUlYQV9QQVJUSUNJUEFDQU8pXG5wcmludChwcm9wb3JjYW8pXG5gYGAifQ== -->
-<pre class="r"><code>dados$BAIXA_PARTICIPACAO &lt;- dados$PARTICIPACAO &lt; 75
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+Descrever as características das escolas e o desempenho de seus estudantes na Prova de Brasil em 2011.
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI05VTExcbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+#NULL</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+
+Estimar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011.
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZGFkb3MkQkFJWEFfUEFSVElDSVBBQ0FPIDwtIGRhZG9zJFBBUlRJQ0lQQUNBTyA8IDc1XG5wcm9wb3JjYW8gPC0gbWVhbihkYWRvcyRCQUlYQV9QQVJUSUNJUEFDQU8pXG5wcmludChwcm9wb3JjYW8pXG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+dados$BAIXA_PARTICIPACAO &lt;- dados$PARTICIPACAO &lt; 75
 proporcao &lt;- mean(dados$BAIXA_PARTICIPACAO)
 print(proporcao)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMTA1XG4ifQ== -->
-<pre><code>[1] 0.105</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXJyb19wYWRyYW8gPC0gc3FydChwcm9wb3JjYW8gKiAoMS1wcm9wb3JjYW8pL24pXG5pY19pbmYgPC0gcHJvcG9yY2FvLWljKmVycm9fcGFkcmFvXG5pY19zdXAgPC0gcHJvcG9yY2FvK2ljKmVycm9fcGFkcmFvXG5cbiMgY29sb3F1ZWkgOTUlIG1hcyBwb2RlcmlhIHNlciBvdXRyb1xuY2F0KHNwcmludGYoXCJJQ1slLjRmIMKxICUuNGZdXCIsIHByb3BvcmNhbywgaWMgKiBlcnJvX3BhZHJhbyksIFwiXFxuXCIpXG5gYGAifQ== -->
-<pre class="r"><code>erro_padrao &lt;- sqrt(proporcao * (1-proporcao)/n)
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMTA1XG4ifQ== --&gt;
+</code></pre>
+<p>[1] 0.105</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZXJyb19wYWRyYW8gPC0gc3FydChwcm9wb3JjYW8gKiAoMS1wcm9wb3JjYW8pL24pXG5pY19pbmYgPC0gcHJvcG9yY2FvLWljKmVycm9fcGFkcmFvXG5pY19zdXAgPC0gcHJvcG9yY2FvK2ljKmVycm9fcGFkcmFvXG5cbiMgY29sb3F1ZWkgOTUlIG1hcyBwb2RlcmlhIHNlciBvdXRyb1xuY2F0KHNwcmludGYoXFxJQ1slLjRmIMKxICUuNGZdXFwsIHByb3BvcmNhbywgaWMgKiBlcnJvX3BhZHJhbyksIFxcXFxuXFwpXG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+erro_padrao &lt;- sqrt(proporcao * (1-proporcao)/n)
 ic_inf &lt;- proporcao-ic*erro_padrao
 ic_sup &lt;- proporcao+ic*erro_padrao
 
 # coloquei 95% mas poderia ser outro
-cat(sprintf(&quot;IC[%.4f ± %.4f]&quot;, proporcao, ic * erro_padrao), &quot;\n&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSUNbMC4xMDUwIMKxIDAuMDQyNV0gXG4ifQ== -->
-<pre><code>IC[0.1050 ± 0.0425] </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KHNwcmludGYoXCJJQ1slLjRmOyAlLjRmXVwiLCBpY19pbmYsIGljX3N1cCkpXG5gYGAifQ== -->
-<pre class="r"><code>cat(sprintf(&quot;IC[%.4f; %.4f]&quot;, ic_inf, ic_sup))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSUNbMC4wNjI1OyAwLjE0NzVdXG4ifQ== -->
-<pre><code>IC[0.0625; 0.1475]</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBvYnM6IGVzY29saGVyIG8gbWFpcyB1c3VhbFxuYGBgIn0= -->
-<pre class="r"><code># obs: escolher o mais usual</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Estimar a proficiência média em Língua Portuguesa e em Matemática das
-escolas na Prova Brasil em 2011.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMw61uZ3VhIHBvcnR1Z3Vlc2Fcbm1lZGlhX3B0IDwtIG1lYW4oZGFkb3MkTk9UQV9MUClcbmVycm9fcHQgPC0gc2QoZGFkb3MkTk9UQV9MUCkvc3FydChuKVxuaWNfbHBfaW5mIDwtIG1lZGlhX3B0IC0gaWMgKiBlcnJvX3B0XG5pY19scF9zdXAgPC0gbWVkaWFfcHQgKyBpYyAqIGVycm9fcHRcblxuY2F0KHNwcmludGYoXCJJQyBsw61uZ3VhIHBvcnR1Z3Vlc2E6IFslLjJmIMKxICUuMmZdXFxuXCIsIG1lZGlhX3B0LCBpYyAqIGVycm9fcHQpKVxuYGBgIn0= -->
-<pre class="r"><code># Língua portuguesa
+cat(sprintf(\IC[%.4f ± %.4f]\, proporcao, ic * erro_padrao), \\n\)</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiSUNbMC4xMDUwIMKxIDAuMDQyNV0gXG4ifQ== --&gt;
+</code></pre>
+<p>IC[0.1050 ± 0.0425]</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2F0KHNwcmludGYoXFxJQ1slLjRmOyAlLjRmXVxcLCBpY19pbmYsIGljX3N1cCkpXG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+cat(sprintf(\IC[%.4f; %.4f]\, ic_inf, ic_sup))</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiSUNbMC4wNjI1OyAwLjE0NzVdXG4ifQ== --&gt;
+</code></pre>
+<p>IC[0.0625; 0.1475]</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBvYnM6IGVzY29saGVyIG8gbWFpcyB1c3VhbFxuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+# obs: escolher o mais usual</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+Estimar a proficiência média em Língua Portuguesa e em Matemática das escolas na Prova Brasil em 2011.
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBMw61uZ3VhIHBvcnR1Z3Vlc2Fcbm1lZGlhX3B0IDwtIG1lYW4oZGFkb3MkTk9UQV9MUClcbmVycm9fcHQgPC0gc2QoZGFkb3MkTk9UQV9MUCkvc3FydChuKVxuaWNfbHBfaW5mIDwtIG1lZGlhX3B0IC0gaWMgKiBlcnJvX3B0XG5pY19scF9zdXAgPC0gbWVkaWFfcHQgKyBpYyAqIGVycm9fcHRcblxuY2F0KHNwcmludGYoXFxJQyBsw61uZ3VhIHBvcnR1Z3Vlc2E6IFslLjJmIMKxICUuMmZdXFxuXFwsIG1lZGlhX3B0LCBpYyAqIGVycm9fcHQpKVxuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+# Língua portuguesa
 media_pt &lt;- mean(dados$NOTA_LP)
 erro_pt &lt;- sd(dados$NOTA_LP)/sqrt(n)
 ic_lp_inf &lt;- media_pt - ic * erro_pt
 ic_lp_sup &lt;- media_pt + ic * erro_pt
 
-cat(sprintf(&quot;IC língua portuguesa: [%.2f ± %.2f]\n&quot;, media_pt, ic * erro_pt))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbMTgyLjc3IMKxIDMuMzBdXG4ifQ== -->
-<pre><code>IC língua portuguesa: [182.77 ± 3.30]</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KHNwcmludGYoXCJJQyBsw61uZ3VhIHBvcnR1Z3Vlc2E6IFslLjJmOyAlLjJmXVxcblwiLCBpY19scF9pbmYsIGljX2xwX3N1cCkpXG5gYGAifQ== -->
-<pre class="r"><code>cat(sprintf(&quot;IC língua portuguesa: [%.2f; %.2f]\n&quot;, ic_lp_inf, ic_lp_sup))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbMTc5LjQ2OyAxODYuMDddXG4ifQ== -->
-<pre><code>IC língua portuguesa: [179.46; 186.07]</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBNYXRlbcOhdGljYVxubWVkaWFfbXQgPC0gbWVhbihkYWRvcyROT1RBX01UKVxuZXJyb19tdCA8LSBzZChkYWRvcyROT1RBX01UKS9zcXJ0KG4pXG5pY19tdF9pbmYgPC0gbWVkaWFfbXQgLSBpYyAqIGVycm9fbXRcbmljX210X3N1cCA8LSBtZWRpYV9tdCArIGljICogZXJyb19tdFxuXG5jYXQoc3ByaW50ZihcIklDIG1hdGVtw6F0aWNhOiBbJS4yZiDCsSAlLjJmXVxcblwiLCBtZWRpYV9tdCwgaWMgKiBlcnJvX210KSlcbmBgYCJ9 -->
-<pre class="r"><code># Matemática
+cat(sprintf(\IC língua portuguesa: [%.2f ± %.2f]\n\, media_pt, ic * erro_pt))</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbMTgyLjc3IMKxIDMuMzBdXG4ifQ== --&gt;
+</code></pre>
+<p>IC língua portuguesa: [182.77 ± 3.30]</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2F0KHNwcmludGYoXFxJQyBsw61uZ3VhIHBvcnR1Z3Vlc2E6IFslLjJmOyAlLjJmXVxcblxcLCBpY19scF9pbmYsIGljX2xwX3N1cCkpXG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+cat(sprintf(\IC língua portuguesa: [%.2f; %.2f]\n\, ic_lp_inf, ic_lp_sup))</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbMTc5LjQ2OyAxODYuMDddXG4ifQ== --&gt;
+</code></pre>
+<p>IC língua portuguesa: [179.46; 186.07]</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBNYXRlbcOhdGljYVxubWVkaWFfbXQgPC0gbWVhbihkYWRvcyROT1RBX01UKVxuZXJyb19tdCA8LSBzZChkYWRvcyROT1RBX01UKS9zcXJ0KG4pXG5pY19tdF9pbmYgPC0gbWVkaWFfbXQgLSBpYyAqIGVycm9fbXRcbmljX210X3N1cCA8LSBtZWRpYV9tdCArIGljICogZXJyb19tdFxuXG5jYXQoc3ByaW50ZihcXElDIG1hdGVtw6F0aWNhOiBbJS4yZiDCsSAlLjJmXVxcblxcLCBtZWRpYV9tdCwgaWMgKiBlcnJvX210KSlcbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+# Matemática
 media_mt &lt;- mean(dados$NOTA_MT)
 erro_mt &lt;- sd(dados$NOTA_MT)/sqrt(n)
 ic_mt_inf &lt;- media_mt - ic * erro_mt
 ic_mt_sup &lt;- media_mt + ic * erro_mt
 
-cat(sprintf(&quot;IC matemática: [%.2f ± %.2f]\n&quot;, media_mt, ic * erro_mt))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSUMgbWF0ZW3DoXRpY2E6IFsyMDEuMzYgwrEgMy44MF1cbiJ9 -->
-<pre><code>IC matemática: [201.36 ± 3.80]</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KHNwcmludGYoXCJJQyBtYXRlbcOhdGljYTogWyUuMmY7ICUuMmZdXFxuXCIsIGljX210X2luZiwgaWNfbXRfc3VwKSlcbmBgYCJ9 -->
-<pre class="r"><code>cat(sprintf(&quot;IC matemática: [%.2f; %.2f]\n&quot;, ic_mt_inf, ic_mt_sup))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSUMgbWF0ZW3DoXRpY2E6IFsxOTcuNTY7IDIwNS4xNl1cbiJ9 -->
-<pre><code>IC matemática: [197.56; 205.16]</code></pre>
+cat(sprintf(\IC matemática: [%.2f ± %.2f]\n\, media_mt, ic * erro_mt))</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiSUMgbWF0ZW3DoXRpY2E6IFsyMDEuMzYgwrEgMy44MF1cbiJ9 --&gt;
+</code></pre>
+<p>IC matemática: [201.36 ± 3.80]</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2F0KHNwcmludGYoXFxJQyBtYXRlbcOhdGljYTogWyUuMmY7ICUuMmZdXFxuXFwsIGljX210X2luZiwgaWNfbXRfc3VwKSlcbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+cat(sprintf(\IC matemática: [%.2f; %.2f]\n\, ic_mt_inf, ic_mt_sup))</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiSUMgbWF0ZW3DoXRpY2E6IFsxOTcuNTY7IDIwNS4xNl1cbiJ9 --&gt;
+</code></pre>
+<p>IC matemática: [197.56; 205.16] ```</p>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFuw6FsaXNlIFByb3ZhIEJyYXNpbCAyMDExIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9DQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUsIGNhY2hlPVQsIG1lc3NhZ2U9Riwgd2FybmluZz1GLCBlcnJvcj1GKQ0KaWYgKCFyZXF1aXJlKCJwYWNtYW4iKSkgaW5zdGFsbC5wYWNrYWdlcygicGFjbWFuIikNCnBhY21hbjo6cF9sb2FkKCJ0aWR5dmVyc2UiLCJyZWFkeGwiKQ0Kb3B0aW9ucyhzY2lwZW49MCkNCmBgYA0KTGVuZG8gb3MgZGFkb3M6DQpgYGB7cn0NCnNldHdkKCIuLiIpICMgYWNlc3NhciBvcyBkYWRvcw0KYXJxdWl2byA8LSAiZGFkb3MvQW1vc3RyYV9nMDFfQWRyaWVsbHlfQW1hbmRhX0VyaWNrX1JhcXVlbC54bHN4Ig0KYXJxdWl2b19hbW9zdHJhIDwtICJkYWRvcy9BbW9zdHJhXzUwX2xpbmhhcy54bHN4Ig0KDQojIHZhcmnDoXZlaXMgZ2xvYmFpcw0KZGFkb3MgPC0gcmVhZF9leGNlbChhcnF1aXZvKSAjIGNhc28gcXVlcmlhIHRlc3RhciBwYXJhIGEgYW1vc3RyYQ0KbiA8LSBucm93KGRhZG9zKSAjIGNhc28gYSBhbW9zdHJhIHNlamEgYWx0ZXJhZGENCmljIDwtIDEuOTYgIyBkZWZpbmkgY29tIDk1JQ0KYGBgDQoNCkRlc2NyZXZlciBhcyBjYXJhY3RlcsOtc3RpY2FzIGRhcyBlc2NvbGFzIGUgbyBkZXNlbXBlbmhvIGRlIHNldXMgZXN0dWRhbnRlcyBuYSBQcm92YSBkZSBCcmFzaWwgZW0gMjAxMS4NCg0KYGBge3J9DQojTlVMTA0KYGBgDQoNCg0KRXN0aW1hciBhIHByb3BvcsOnw6NvIGRlIGVzY29sYXMgcXVlIG1lbm9zIGRlIDc1JSBkZSBzZXVzIGVzdHVkYW50ZXMgcGFydGljaXBhcmFtIGRhIFByb3ZhIEJyYXNpbCBlbSAyMDExLg0KDQpgYGB7cn0NCmRhZG9zJEJBSVhBX1BBUlRJQ0lQQUNBTyA8LSBkYWRvcyRQQVJUSUNJUEFDQU8gPCA3NQ0KcHJvcG9yY2FvIDwtIG1lYW4oZGFkb3MkQkFJWEFfUEFSVElDSVBBQ0FPKQ0KcHJpbnQocHJvcG9yY2FvKQ0KDQplcnJvX3BhZHJhbyA8LSBzcXJ0KHByb3BvcmNhbyAqICgxLXByb3BvcmNhbykvbikNCmljX2luZiA8LSBwcm9wb3JjYW8taWMqZXJyb19wYWRyYW8NCmljX3N1cCA8LSBwcm9wb3JjYW8raWMqZXJyb19wYWRyYW8NCg0KIyBjb2xvcXVlaSA5NSUgbWFzIHBvZGVyaWEgc2VyIG91dHJvDQpjYXQoc3ByaW50ZigiSUNbJS40ZiDCsSAlLjRmXSIsIHByb3BvcmNhbywgaWMgKiBlcnJvX3BhZHJhbyksICJcbiIpDQpjYXQoc3ByaW50ZigiSUNbJS40ZjsgJS40Zl0iLCBpY19pbmYsIGljX3N1cCkpDQojIG9iczogZXNjb2xoZXIgbyBtYWlzIHVzdWFsDQpgYGANCkVzdGltYXIgYSBwcm9maWNpw6puY2lhIG3DqWRpYSBlbSBMw61uZ3VhIFBvcnR1Z3Vlc2EgZSBlbSBNYXRlbcOhdGljYSBkYXMgZXNjb2xhcyBuYSBQcm92YSBCcmFzaWwgZW0gMjAxMS4NCg0KYGBge3J9DQojIEzDrW5ndWEgcG9ydHVndWVzYQ0KbWVkaWFfcHQgPC0gbWVhbihkYWRvcyROT1RBX0xQKQ0KZXJyb19wdCA8LSBzZChkYWRvcyROT1RBX0xQKS9zcXJ0KG4pDQppY19scF9pbmYgPC0gbWVkaWFfcHQgLSBpYyAqIGVycm9fcHQNCmljX2xwX3N1cCA8LSBtZWRpYV9wdCArIGljICogZXJyb19wdA0KDQpjYXQoc3ByaW50ZigiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbJS4yZiDCsSAlLjJmXVxuIiwgbWVkaWFfcHQsIGljICogZXJyb19wdCkpDQpjYXQoc3ByaW50ZigiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbJS4yZjsgJS4yZl1cbiIsIGljX2xwX2luZiwgaWNfbHBfc3VwKSkNCg0KIyBNYXRlbcOhdGljYQ0KbWVkaWFfbXQgPC0gbWVhbihkYWRvcyROT1RBX01UKQ0KZXJyb19tdCA8LSBzZChkYWRvcyROT1RBX01UKS9zcXJ0KG4pDQppY19tdF9pbmYgPC0gbWVkaWFfbXQgLSBpYyAqIGVycm9fbXQNCmljX210X3N1cCA8LSBtZWRpYV9tdCArIGljICogZXJyb19tdA0KDQpjYXQoc3ByaW50ZigiSUMgbWF0ZW3DoXRpY2E6IFslLjJmIMKxICUuMmZdXG4iLCBtZWRpYV9tdCwgaWMgKiBlcnJvX210KSkNCmNhdChzcHJpbnRmKCJJQyBtYXRlbcOhdGljYTogWyUuMmY7ICUuMmZdXG4iLCBpY19tdF9pbmYsIGljX210X3N1cCkpDQpgYGANCg0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFuw6FsaXNlIFByb3ZhIEJyYXNpbCAyMDExIg0Kb3V0cHV0Og0KICBwZGZfZG9jdW1lbnQ6IGRlZmF1bHQNCiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdA0KLS0tDQoNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFLCBjYWNoZT1ULCBtZXNzYWdlPUYsIHdhcm5pbmc9RiwgZXJyb3I9RikNCmlmICghcmVxdWlyZSgicGFjbWFuIikpIGluc3RhbGwucGFja2FnZXMoInBhY21hbiIpDQpwYWNtYW46OnBfbG9hZCgidGlkeXZlcnNlIiwicmVhZHhsIikNCm9wdGlvbnMoc2NpcGVuPTApDQpgYGANCkxlbmRvIG9zIGRhZG9zOg0KYGBge3J9DQpzZXR3ZCgiLi4iKSAjIGFjZXNzYXIgb3MgZGFkb3MNCmFycXVpdm8gPC0gImRhZG9zL0Ftb3N0cmFfZzAxX0FkcmllbGx5X0FtYW5kYV9Fcmlja19SYXF1ZWwueGxzeCINCmFycXVpdm9fYW1vc3RyYSA8LSAiZGFkb3MvQW1vc3RyYV81MF9saW5oYXMueGxzeCINCg0KIyB2YXJpw6F2ZWlzIGdsb2JhaXMNCmRhZG9zIDwtIHJlYWRfZXhjZWwoYXJxdWl2bykgIyBjYXNvIHF1ZXJpYSB0ZXN0YXIgcGFyYSBhIGFtb3N0cmENCm4gPC0gbnJvdyhkYWRvcykgIyBjYXNvIGEgYW1vc3RyYSBzZWphIGFsdGVyYWRhDQppYyA8LSAxLjk2ICMgZGVmaW5pIGNvbSA5NSUNCmBgYA0KDQpEZXNjcmV2ZXIgYXMgY2FyYWN0ZXLDrXN0aWNhcyBkYXMgZXNjb2xhcyBlIG8gZGVzZW1wZW5obyBkZSBzZXVzIGVzdHVkYW50ZXMgbmEgUHJvdmEgZGUgQnJhc2lsIGVtIDIwMTEuDQoNCmBgYHtyfQ0KI05VTEwNCmBgYA0KDQoNCkVzdGltYXIgYSBwcm9wb3LDp8OjbyBkZSBlc2NvbGFzIHF1ZSBtZW5vcyBkZSA3NSUgZGUgc2V1cyBlc3R1ZGFudGVzIHBhcnRpY2lwYXJhbSBkYSBQcm92YSBCcmFzaWwgZW0gMjAxMS4NCg0KYGBge3J9DQpkYWRvcyRCQUlYQV9QQVJUSUNJUEFDQU8gPC0gZGFkb3MkUEFSVElDSVBBQ0FPIDwgNzUNCnByb3BvcmNhbyA8LSBtZWFuKGRhZG9zJEJBSVhBX1BBUlRJQ0lQQUNBTykNCnByaW50KHByb3BvcmNhbykNCg0KZXJyb19wYWRyYW8gPC0gc3FydChwcm9wb3JjYW8gKiAoMS1wcm9wb3JjYW8pL24pDQppY19pbmYgPC0gcHJvcG9yY2FvLWljKmVycm9fcGFkcmFvDQppY19zdXAgPC0gcHJvcG9yY2FvK2ljKmVycm9fcGFkcmFvDQoNCiMgY29sb3F1ZWkgOTUlIG1hcyBwb2RlcmlhIHNlciBvdXRybw0KY2F0KHNwcmludGYoIklDWyUuNGYgwrEgJS40Zl0iLCBwcm9wb3JjYW8sIGljICogZXJyb19wYWRyYW8pLCAiXG4iKQ0KY2F0KHNwcmludGYoIklDWyUuNGY7ICUuNGZdIiwgaWNfaW5mLCBpY19zdXApKQ0KIyBvYnM6IGVzY29saGVyIG8gbWFpcyB1c3VhbA0KYGBgDQpFc3RpbWFyIGEgcHJvZmljacOqbmNpYSBtw6lkaWEgZW0gTMOtbmd1YSBQb3J0dWd1ZXNhIGUgZW0gTWF0ZW3DoXRpY2EgZGFzIGVzY29sYXMgbmEgUHJvdmEgQnJhc2lsIGVtIDIwMTEuDQoNCmBgYHtyfQ0KIyBMw61uZ3VhIHBvcnR1Z3Vlc2ENCm1lZGlhX3B0IDwtIG1lYW4oZGFkb3MkTk9UQV9MUCkNCmVycm9fcHQgPC0gc2QoZGFkb3MkTk9UQV9MUCkvc3FydChuKQ0KaWNfbHBfaW5mIDwtIG1lZGlhX3B0IC0gaWMgKiBlcnJvX3B0DQppY19scF9zdXAgPC0gbWVkaWFfcHQgKyBpYyAqIGVycm9fcHQNCg0KY2F0KHNwcmludGYoIklDIGzDrW5ndWEgcG9ydHVndWVzYTogWyUuMmYgwrEgJS4yZl1cbiIsIG1lZGlhX3B0LCBpYyAqIGVycm9fcHQpKQ0KY2F0KHNwcmludGYoIklDIGzDrW5ndWEgcG9ydHVndWVzYTogWyUuMmY7ICUuMmZdXG4iLCBpY19scF9pbmYsIGljX2xwX3N1cCkpDQoNCiMgTWF0ZW3DoXRpY2ENCm1lZGlhX210IDwtIG1lYW4oZGFkb3MkTk9UQV9NVCkNCmVycm9fbXQgPC0gc2QoZGFkb3MkTk9UQV9NVCkvc3FydChuKQ0KaWNfbXRfaW5mIDwtIG1lZGlhX210IC0gaWMgKiBlcnJvX210DQppY19tdF9zdXAgPC0gbWVkaWFfbXQgKyBpYyAqIGVycm9fbXQNCg0KY2F0KHNwcmludGYoIklDIG1hdGVtw6F0aWNhOiBbJS4yZiDCsSAlLjJmXVxuIiwgbWVkaWFfbXQsIGljICogZXJyb19tdCkpDQpjYXQoc3ByaW50ZigiSUMgbWF0ZW3DoXRpY2E6IFslLjJmOyAlLjJmXVxuIiwgaWNfbXRfaW5mLCBpY19tdF9zdXApKQ0KYGBgDQoNCg0K</div>
 
 
 
