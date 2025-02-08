@@ -1,0 +1,122 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+install.packages("readxl")
+install.packages("dplyr")
+library(readxl)
+library(dplyr)
+dados <- read_excel("Amostra_g01_Adrielly_Amanda_Erick_Raquel.xlsx")
+str(dados)
+head(dados)
+nrow(dados)
+ncol(dados)
+set.seed(123)
+amostra_50 <- dados %>% sample_n(50)
+head(amostra_50)
+```
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+analise_descritiva <- function(dados, nome_amostra) {
+  cat("Análise Descritiva para", nome_amostra, "\n")
+  cat("\nNotas em Língua Portuguesa (NOTA_LP):\n")
+  print(summary(dados$NOTA_LP))
+  cat("Desvio Padrão:", sd(dados$NOTA_LP), "\n")
+  cat("\nNotas em Matemática (NOTA_MT):\n")
+  print(summary(dados$NOTA_MT))
+  cat("Desvio Padrão:", sd(dados$NOTA_MT), "\n")
+  ggplot(dados, aes(x = NOTA_LP)) +
+    geom_histogram(binwidth = 10, fill = "blue", color = "black") +
+    ggtitle(paste("Distribuição de NOTA_LP -", nome_amostra))
+  ggplot(dados, aes(x = NOTA_MT)) +
+    geom_histogram(binwidth = 10, fill = "red", color = "black") +
+    ggtitle(paste("Distribuição de NOTA_MT -", nome_amostra))
+}
+analise_descritiva(dados, "Amostra de 200 Escolas")
+analise_descritiva(amostra_50, "Amostra de 50 Escolas")
+```
+```{r}
+# Função para testes de normalidade
+testes_normalidade <- function(dados, nome_amostra) {
+  cat("\nTestes de Normalidade para", nome_amostra, "\n")
+  
+  # Teste de Shapiro-Wilk para NOTA_LP
+  cat("\nTeste de Shapiro-Wilk para NOTA_LP:\n")
+  print(shapiro.test(dados$NOTA_LP))
+  
+  # Teste de Shapiro-Wilk para NOTA_MT
+  cat("\nTeste de Shapiro-Wilk para NOTA_MT:\n")
+  print(shapiro.test(dados$NOTA_MT))
+  
+  # Gráficos Q-Q
+  par(mfrow = c(1, 2))
+  qqnorm(dados$NOTA_LP, main = paste("Q-Q Plot - NOTA_LP -", nome_amostra))
+  qqline(dados$NOTA_LP)
+  
+  qqnorm(dados$NOTA_MT, main = paste("Q-Q Plot - NOTA_MT -", nome_amostra))
+  qqline(dados$NOTA_MT)
+}
+
+# Aplicar a função para ambas as amostras
+testes_normalidade(dados, "Amostra de 200 Escolas")
+testes_normalidade(amostra_50, "Amostra de 50 Escolas")
+```
+
+```{r}
+# Função para comparar as médias com 2009
+comparar_medias <- function(dados, nome_amostra) {
+  cat("\nComparação das Médias para", nome_amostra, "\n")
+  
+  # Médias de 2011
+  media_lp_2011 <- mean(dados$NOTA_LP)
+  media_mt_2011 <- mean(dados$NOTA_MT)
+  
+  cat("Média de NOTA_LP em 2011:", media_lp_2011, "\n")
+  cat("Média de NOTA_MT em 2011:", media_mt_2011, "\n")
+  
+  # Valores de 2009
+  media_lp_2009 <- 184.3
+  media_mt_2009 <- 204.3
+  
+  # Teste t para comparar as médias
+  cat("\nTeste t para NOTA_LP (2011 vs. 2009):\n")
+  print(t.test(dados$NOTA_LP, mu = media_lp_2009))
+  
+  cat("\nTeste t para NOTA_MT (2011 vs. 2009):\n")
+  print(t.test(dados$NOTA_MT, mu = media_mt_2009))
+}
+
+# Aplicar a função para ambas as amostras
+comparar_medias(dados, "Amostra de 200 Escolas")
+comparar_medias(amostra_50, "Amostra de 50 Escolas")
+```
+```{r}
+# Função para comparar as amostras
+comparar_amostras <- function(dados, amostra_50) {
+  cat("\nComparação entre Amostra de 200 e 50 Escolas\n")
+  
+  # Comparação das médias
+  cat("\nMédias de NOTA_LP:\n")
+  cat("Amostra de 200:", mean(dados$NOTA_LP), "\n")
+  cat("Amostra de 50:", mean(amostra_50$NOTA_LP), "\n")
+  
+  cat("\nMédias de NOTA_MT:\n")
+  cat("Amostra de 200:", mean(dados$NOTA_MT), "\n")
+  cat("Amostra de 50:", mean(amostra_50$NOTA_MT), "\n")
+  
+  # Teste t para comparar as médias entre as amostras
+  cat("\nTeste t para NOTA_LP entre as amostras:\n")
+  print(t.test(dados$NOTA_LP, amostra_50$NOTA_LP))
+  
+  cat("\nTeste t para NOTA_MT entre as amostras:\n")
+  print(t.test(dados$NOTA_MT, amostra_50$NOTA_MT))
+}
+
+# Aplicar a função
+comparar_amostras(dados, amostra_50)
+```
+
+
+
