@@ -19,18 +19,19 @@ arquivo_amostra <- "dados/Amostra_50_linhas.xlsx"
 
 # variáveis globais
 dados <- read_excel(arquivo) # caso queria testar para a amostra
+amostra <- read_excel(arquivo_amostra)
 n <- nrow(dados) # caso a amostra seja alterada
 ic <- 1.96 # defini com 95%
 ```
 
-Descrever as características das escolas e o desempenho de seus estudantes na Prova de Brasil em 2011.
+# 1. Descrever as características das escolas e o desempenho de seus estudantes na Prova de Brasil em 2011.
 
 ```{r}
 #NULL
 ```
 
 
-Estimar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011.
+# 2. Estimar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011.
 
 ```{r}
 dados$BAIXA_PARTICIPACAO <- dados$PARTICIPACAO < 75
@@ -46,7 +47,7 @@ cat(sprintf("IC[%.4f ± %.4f]", proporcao, ic * erro_padrao), "\n")
 cat(sprintf("IC[%.4f; %.4f]", ic_inf, ic_sup))
 # obs: escolher o mais usual
 ```
-Estimar a proficiência média em Língua Portuguesa e em Matemática das escolas na Prova Brasil em 2011.
+#3. Estimar a proficiência média em Língua Portuguesa e em Matemática das escolas na Prova Brasil em 2011.
 
 ```{r}
 # Língua portuguesa
@@ -67,5 +68,120 @@ ic_mt_sup <- media_mt + ic * erro_mt
 cat(sprintf("IC matemática: [%.2f ± %.2f]\n", media_mt, ic * erro_mt))
 cat(sprintf("IC matemática: [%.2f; %.2f]\n", ic_mt_inf, ic_mt_sup))
 ```
+
+
+
+# 8. Comparar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011 segundo:
+
+## Local da escola
+
+### Analise para amostra de 200
+
+```{r}
+
+menor_75 <- dados %>%
+  group_by(LOCAL) %>%
+  summarise(
+    total = n(),
+    menor_que_75 = sum(PARTICIPACAO  < 75),
+    prop = round(menor_que_75 / total, 2)
+  )
+
+menor_75$LOCAL <- menor_75$LOCAL %>%
+  factor(levels = c("1", "2"), labels = c("Urbano", "Rural"))
+
+
+menor_75 %>% 
+  ggplot(aes(x = reorder(LOCAL, -prop), y = prop, fill = LOCAL)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Proporção de escolas com menos de 75% de participação por região",
+       x = "Região", y = "Proporção") +
+  theme_bw()
+
+
+```
+
+### Analise para amostra de 50
+
+```{r}
+
+menor_75 <- amostra %>%
+  group_by(LOCAL) %>%
+  summarise(
+    total = n(),
+    menor_que_75 = sum(PARTICIPACAO  < 75),
+    prop = round(menor_que_75 / total, 2)
+  )
+
+menor_75$LOCAL <- menor_75$LOCAL %>%
+  factor(levels = c("1", "2"), labels = c("Urbano", "Rural"))
+
+
+menor_75 %>% 
+  ggplot(aes(x = reorder(LOCAL, -prop), y = prop, fill = LOCAL)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Proporção de escolas com menos de 75% de participação por região",
+       x = "Região", y = "Proporção") +
+  theme_bw()
+
+
+```
+
+
+## Região de localização da escola
+
+### Analise para amostra de 200
+```{r}
+
+menor_75 <- dados %>%
+  group_by(REG) %>%
+  summarise(
+    total = n(),
+    menor_que_75 = sum(PARTICIPACAO  < 75),
+    prop = round(menor_que_75 / total, 2)
+  )
+
+
+menor_75 %>% 
+  ggplot(aes(x = reorder(REG, -prop), y = prop, fill = REG)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Proporção de escolas com menos de 75% de participação por região",
+       x = "Região", y = "Proporção") +
+  scale_fill_discrete(
+    labels = c("N" = "Norte", "S" = "Sul", "CO" = "Centro-Oeste", "NE" = "Nordeste", "SE" = "Sudeste")
+  ) +
+  theme_bw()
+
+
+```
+
+### Analise para amostra de 50
+
+```{r}
+
+menor_75 <- amostra %>%
+  group_by(REG) %>%
+  summarise(
+    total = n(),
+    menor_que_75 = sum(PARTICIPACAO  < 75),
+    prop = round(menor_que_75 / total, 2)
+  )
+
+
+menor_75 %>% 
+  ggplot(aes(x = reorder(REG, -prop), y = prop, fill = REG)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Proporção de escolas com menos de 75% de participação por região",
+       x = "Região", y = "Proporção") +
+  scale_fill_discrete(
+    labels = c("N" = "Norte", "S" = "Sul", "CO" = "Centro-Oeste", "NE" = "Nordeste", "SE" = "Sudeste")
+  ) +
+  theme_bw()
+
+
+```
+
+
+
 
 

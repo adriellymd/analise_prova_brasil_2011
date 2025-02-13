@@ -1757,212 +1757,243 @@ display: none;
 <p>Lendo os dados:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc2V0d2QoXFwuLlxcKSAjIGFjZXNzYXIgb3MgZGFkb3NcbmFycXVpdm8gPC0gXFxkYWRvcy9BbW9zdHJhX2cwMV9BZHJpZWxseV9BbWFuZGFfRXJpY2tfUmFxdWVsLnhsc3hcXFxuYXJxdWl2b19hbW9zdHJhIDwtIFxcZGFkb3MvQW1vc3RyYV81MF9saW5oYXMueGxzeFxcXG5cbiMgdmFyacOhdmVpcyBnbG9iYWlzXG5kYWRvcyA8LSByZWFkX2V4Y2VsKGFycXVpdm8pICMgY2FzbyBxdWVyaWEgdGVzdGFyIHBhcmEgYSBhbW9zdHJhXG5uIDwtIG5yb3coZGFkb3MpICMgY2FzbyBhIGFtb3N0cmEgc2VqYSBhbHRlcmFkYVxuaWMgPC0gMS45NiAjIGRlZmluaSBjb20gOTUlXG5gYGBcbmBgYCJ9 -->
-<pre class="r"><code>```r
-setwd(\..\) # acessar os dados
-arquivo &lt;- \dados/Amostra_g01_Adrielly_Amanda_Erick_Raquel.xlsx\
-arquivo_amostra &lt;- \dados/Amostra_50_linhas.xlsx\
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0d2QoXCIuLlwiKSAjIGFjZXNzYXIgb3MgZGFkb3NcbmFycXVpdm8gPC0gXCJkYWRvcy9BbW9zdHJhX2cwMV9BZHJpZWxseV9BbWFuZGFfRXJpY2tfUmFxdWVsLnhsc3hcIlxuYXJxdWl2b19hbW9zdHJhIDwtIFwiZGFkb3MvQW1vc3RyYV81MF9saW5oYXMueGxzeFwiXG5cbiMgdmFyacOhdmVpcyBnbG9iYWlzXG5kYWRvcyA8LSByZWFkX2V4Y2VsKGFycXVpdm8pICMgY2FzbyBxdWVyaWEgdGVzdGFyIHBhcmEgYSBhbW9zdHJhXG5hbW9zdHJhIDwtIHJlYWRfZXhjZWwoYXJxdWl2b19hbW9zdHJhKVxubiA8LSBucm93KGRhZG9zKSAjIGNhc28gYSBhbW9zdHJhIHNlamEgYWx0ZXJhZGFcbmljIDwtIDEuOTYgIyBkZWZpbmkgY29tIDk1JVxuYGBgIn0= -->
+<pre class="r"><code>setwd(&quot;..&quot;) # acessar os dados
+arquivo &lt;- &quot;dados/Amostra_g01_Adrielly_Amanda_Erick_Raquel.xlsx&quot;
+arquivo_amostra &lt;- &quot;dados/Amostra_50_linhas.xlsx&quot;
 
 # variáveis globais
 dados &lt;- read_excel(arquivo) # caso queria testar para a amostra
+amostra &lt;- read_excel(arquivo_amostra)
 n &lt;- nrow(dados) # caso a amostra seja alterada
 ic &lt;- 1.96 # defini com 95%</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-Descrever as características das escolas e o desempenho de seus estudantes na Prova de Brasil em 2011.
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI05VTExcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-#NULL</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-Estimar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011.
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZGFkb3MkQkFJWEFfUEFSVElDSVBBQ0FPIDwtIGRhZG9zJFBBUlRJQ0lQQUNBTyA8IDc1XG5wcm9wb3JjYW8gPC0gbWVhbihkYWRvcyRCQUlYQV9QQVJUSUNJUEFDQU8pXG5wcmludChwcm9wb3JjYW8pXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-dados$BAIXA_PARTICIPACAO &lt;- dados$PARTICIPACAO &lt; 75
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="descrever-as-características-das-escolas-e-o-desempenho-de-seus-estudantes-na-prova-de-brasil-em-2011." class="section level1">
+<h1>1. Descrever as características das escolas e o desempenho de seus
+estudantes na Prova de Brasil em 2011.</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI05VTExcbmBgYCJ9 -->
+<pre class="r"><code>#NULL</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="estimar-a-proporção-de-escolas-que-menos-de-75-de-seus-estudantes-participaram-da-prova-brasil-em-2011." class="section level1">
+<h1>2. Estimar a proporção de escolas que menos de 75% de seus
+estudantes participaram da Prova Brasil em 2011.</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGFkb3MkQkFJWEFfUEFSVElDSVBBQ0FPIDwtIGRhZG9zJFBBUlRJQ0lQQUNBTyA8IDc1XG5wcm9wb3JjYW8gPC0gbWVhbihkYWRvcyRCQUlYQV9QQVJUSUNJUEFDQU8pXG5wcmludChwcm9wb3JjYW8pXG5gYGAifQ== -->
+<pre class="r"><code>dados$BAIXA_PARTICIPACAO &lt;- dados$PARTICIPACAO &lt; 75
 proporcao &lt;- mean(dados$BAIXA_PARTICIPACAO)
 print(proporcao)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMTA1XG4ifQ== --&gt;
-</code></pre>
-<p>[1] 0.105</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZXJyb19wYWRyYW8gPC0gc3FydChwcm9wb3JjYW8gKiAoMS1wcm9wb3JjYW8pL24pXG5pY19pbmYgPC0gcHJvcG9yY2FvLWljKmVycm9fcGFkcmFvXG5pY19zdXAgPC0gcHJvcG9yY2FvK2ljKmVycm9fcGFkcmFvXG5cbiMgY29sb3F1ZWkgOTUlIG1hcyBwb2RlcmlhIHNlciBvdXRyb1xuY2F0KHNwcmludGYoXFxJQ1slLjRmIMKxICUuNGZdXFwsIHByb3BvcmNhbywgaWMgKiBlcnJvX3BhZHJhbyksIFxcXFxuXFwpXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-erro_padrao &lt;- sqrt(proporcao * (1-proporcao)/n)
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMTA1XG4ifQ== -->
+<pre><code>[1] 0.105</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXJyb19wYWRyYW8gPC0gc3FydChwcm9wb3JjYW8gKiAoMS1wcm9wb3JjYW8pL24pXG5pY19pbmYgPC0gcHJvcG9yY2FvLWljKmVycm9fcGFkcmFvXG5pY19zdXAgPC0gcHJvcG9yY2FvK2ljKmVycm9fcGFkcmFvXG5cbiMgY29sb3F1ZWkgOTUlIG1hcyBwb2RlcmlhIHNlciBvdXRyb1xuY2F0KHNwcmludGYoXCJJQ1slLjRmIMKxICUuNGZdXCIsIHByb3BvcmNhbywgaWMgKiBlcnJvX3BhZHJhbyksIFwiXFxuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>erro_padrao &lt;- sqrt(proporcao * (1-proporcao)/n)
 ic_inf &lt;- proporcao-ic*erro_padrao
 ic_sup &lt;- proporcao+ic*erro_padrao
 
 # coloquei 95% mas poderia ser outro
-cat(sprintf(\IC[%.4f ± %.4f]\, proporcao, ic * erro_padrao), \\n\)</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiSUNbMC4xMDUwIMKxIDAuMDQyNV0gXG4ifQ== --&gt;
-</code></pre>
-<p>IC[0.1050 ± 0.0425]</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2F0KHNwcmludGYoXFxJQ1slLjRmOyAlLjRmXVxcLCBpY19pbmYsIGljX3N1cCkpXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-cat(sprintf(\IC[%.4f; %.4f]\, ic_inf, ic_sup))</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiSUNbMC4wNjI1OyAwLjE0NzVdXG4ifQ== --&gt;
-</code></pre>
-<p>IC[0.0625; 0.1475]</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBvYnM6IGVzY29saGVyIG8gbWFpcyB1c3VhbFxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-# obs: escolher o mais usual</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-Estimar a proficiência média em Língua Portuguesa e em Matemática das escolas na Prova Brasil em 2011.
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBMw61uZ3VhIHBvcnR1Z3Vlc2Fcbm1lZGlhX3B0IDwtIG1lYW4oZGFkb3MkTk9UQV9MUClcbmVycm9fcHQgPC0gc2QoZGFkb3MkTk9UQV9MUCkvc3FydChuKVxuaWNfbHBfaW5mIDwtIG1lZGlhX3B0IC0gaWMgKiBlcnJvX3B0XG5pY19scF9zdXAgPC0gbWVkaWFfcHQgKyBpYyAqIGVycm9fcHRcblxuY2F0KHNwcmludGYoXFxJQyBsw61uZ3VhIHBvcnR1Z3Vlc2E6IFslLjJmIMKxICUuMmZdXFxuXFwsIG1lZGlhX3B0LCBpYyAqIGVycm9fcHQpKVxuYGBgXG5gYGAifQ== --&gt;
-
-```r
-```r
-# Língua portuguesa
+cat(sprintf(&quot;IC[%.4f ± %.4f]&quot;, proporcao, ic * erro_padrao), &quot;\n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSUNbMC4xMDUwIMKxIDAuMDQyNV0gXG4ifQ== -->
+<pre><code>IC[0.1050 ± 0.0425] </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KHNwcmludGYoXCJJQ1slLjRmOyAlLjRmXVwiLCBpY19pbmYsIGljX3N1cCkpXG5gYGAifQ== -->
+<pre class="r"><code>cat(sprintf(&quot;IC[%.4f; %.4f]&quot;, ic_inf, ic_sup))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSUNbMC4wNjI1OyAwLjE0NzVdXG4ifQ== -->
+<pre><code>IC[0.0625; 0.1475]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBvYnM6IGVzY29saGVyIG8gbWFpcyB1c3VhbFxuYGBgIn0= -->
+<pre class="r"><code># obs: escolher o mais usual</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#3. Estimar a proficiência média em Língua Portuguesa e em Matemática
+das escolas na Prova Brasil em 2011.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMw61uZ3VhIHBvcnR1Z3Vlc2Fcbm1lZGlhX3B0IDwtIG1lYW4oZGFkb3MkTk9UQV9MUClcbmVycm9fcHQgPC0gc2QoZGFkb3MkTk9UQV9MUCkvc3FydChuKVxuaWNfbHBfaW5mIDwtIG1lZGlhX3B0IC0gaWMgKiBlcnJvX3B0XG5pY19scF9zdXAgPC0gbWVkaWFfcHQgKyBpYyAqIGVycm9fcHRcblxuY2F0KHNwcmludGYoXCJJQyBsw61uZ3VhIHBvcnR1Z3Vlc2E6IFslLjJmIMKxICUuMmZdXFxuXCIsIG1lZGlhX3B0LCBpYyAqIGVycm9fcHQpKVxuYGBgIn0= -->
+<pre class="r"><code># Língua portuguesa
 media_pt &lt;- mean(dados$NOTA_LP)
 erro_pt &lt;- sd(dados$NOTA_LP)/sqrt(n)
 ic_lp_inf &lt;- media_pt - ic * erro_pt
 ic_lp_sup &lt;- media_pt + ic * erro_pt
 
-cat(sprintf(\IC língua portuguesa: [%.2f ± %.2f]\n\, media_pt, ic * erro_pt))</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbMTgyLjc3IMKxIDMuMzBdXG4ifQ== --&gt;
-</code></pre>
-<p>IC língua portuguesa: [182.77 ± 3.30]</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2F0KHNwcmludGYoXFxJQyBsw61uZ3VhIHBvcnR1Z3Vlc2E6IFslLjJmOyAlLjJmXVxcblxcLCBpY19scF9pbmYsIGljX2xwX3N1cCkpXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-cat(sprintf(\IC língua portuguesa: [%.2f; %.2f]\n\, ic_lp_inf, ic_lp_sup))</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbMTc5LjQ2OyAxODYuMDddXG4ifQ== --&gt;
-</code></pre>
-<p>IC língua portuguesa: [179.46; 186.07]</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyBNYXRlbcOhdGljYVxubWVkaWFfbXQgPC0gbWVhbihkYWRvcyROT1RBX01UKVxuZXJyb19tdCA8LSBzZChkYWRvcyROT1RBX01UKS9zcXJ0KG4pXG5pY19tdF9pbmYgPC0gbWVkaWFfbXQgLSBpYyAqIGVycm9fbXRcbmljX210X3N1cCA8LSBtZWRpYV9tdCArIGljICogZXJyb19tdFxuXG5jYXQoc3ByaW50ZihcXElDIG1hdGVtw6F0aWNhOiBbJS4yZiDCsSAlLjJmXVxcblxcLCBtZWRpYV9tdCwgaWMgKiBlcnJvX210KSlcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-# Matemática
+cat(sprintf(&quot;IC língua portuguesa: [%.2f ± %.2f]\n&quot;, media_pt, ic * erro_pt))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbMTgyLjc3IMKxIDMuMzBdXG4ifQ== -->
+<pre><code>IC língua portuguesa: [182.77 ± 3.30]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KHNwcmludGYoXCJJQyBsw61uZ3VhIHBvcnR1Z3Vlc2E6IFslLjJmOyAlLjJmXVxcblwiLCBpY19scF9pbmYsIGljX2xwX3N1cCkpXG5gYGAifQ== -->
+<pre class="r"><code>cat(sprintf(&quot;IC língua portuguesa: [%.2f; %.2f]\n&quot;, ic_lp_inf, ic_lp_sup))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSUMgbMOtbmd1YSBwb3J0dWd1ZXNhOiBbMTc5LjQ2OyAxODYuMDddXG4ifQ== -->
+<pre><code>IC língua portuguesa: [179.46; 186.07]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBNYXRlbcOhdGljYVxubWVkaWFfbXQgPC0gbWVhbihkYWRvcyROT1RBX01UKVxuZXJyb19tdCA8LSBzZChkYWRvcyROT1RBX01UKS9zcXJ0KG4pXG5pY19tdF9pbmYgPC0gbWVkaWFfbXQgLSBpYyAqIGVycm9fbXRcbmljX210X3N1cCA8LSBtZWRpYV9tdCArIGljICogZXJyb19tdFxuXG5jYXQoc3ByaW50ZihcIklDIG1hdGVtw6F0aWNhOiBbJS4yZiDCsSAlLjJmXVxcblwiLCBtZWRpYV9tdCwgaWMgKiBlcnJvX210KSlcbmBgYCJ9 -->
+<pre class="r"><code># Matemática
 media_mt &lt;- mean(dados$NOTA_MT)
 erro_mt &lt;- sd(dados$NOTA_MT)/sqrt(n)
 ic_mt_inf &lt;- media_mt - ic * erro_mt
 ic_mt_sup &lt;- media_mt + ic * erro_mt
 
-cat(sprintf(\IC matemática: [%.2f ± %.2f]\n\, media_mt, ic * erro_mt))</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiSUMgbWF0ZW3DoXRpY2E6IFsyMDEuMzYgwrEgMy44MF1cbiJ9 --&gt;
-</code></pre>
-<p>IC matemática: [201.36 ± 3.80]</p>
-<pre><code>
-
-
-&lt;!-- rnb-output-end --&gt;
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2F0KHNwcmludGYoXFxJQyBtYXRlbcOhdGljYTogWyUuMmY7ICUuMmZdXFxuXFwsIGljX210X2luZiwgaWNfbXRfc3VwKSlcbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-cat(sprintf(\IC matemática: [%.2f; %.2f]\n\, ic_mt_inf, ic_mt_sup))</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-output-begin eyJkYXRhIjoiSUMgbWF0ZW3DoXRpY2E6IFsxOTcuNTY7IDIwNS4xNl1cbiJ9 --&gt;
-</code></pre>
-<p>IC matemática: [197.56; 205.16] ```</p>
+cat(sprintf(&quot;IC matemática: [%.2f ± %.2f]\n&quot;, media_mt, ic * erro_mt))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSUMgbWF0ZW3DoXRpY2E6IFsyMDEuMzYgwrEgMy44MF1cbiJ9 -->
+<pre><code>IC matemática: [201.36 ± 3.80]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KHNwcmludGYoXCJJQyBtYXRlbcOhdGljYTogWyUuMmY7ICUuMmZdXFxuXCIsIGljX210X2luZiwgaWNfbXRfc3VwKSlcbmBgYCJ9 -->
+<pre class="r"><code>cat(sprintf(&quot;IC matemática: [%.2f; %.2f]\n&quot;, ic_mt_inf, ic_mt_sup))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSUMgbWF0ZW3DoXRpY2E6IFsxOTcuNTY7IDIwNS4xNl1cbiJ9 -->
+<pre><code>IC matemática: [197.56; 205.16]</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="comparar-a-proporção-de-escolas-que-menos-de-75-de-seus-estudantes-participaram-da-prova-brasil-em-2011-segundo" class="section level1">
+<h1>8. Comparar a proporção de escolas que menos de 75% de seus
+estudantes participaram da Prova Brasil em 2011 segundo:</h1>
+<div id="local-da-escola" class="section level2">
+<h2>Local da escola</h2>
+<div id="analise-para-amostra-de-200" class="section level3">
+<h3>Analise para amostra de 200</h3>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5tZW5vcl83NSA8LSBkYWRvcyAlPiVcbiAgZ3JvdXBfYnkoTE9DQUwpICU+JVxuICBzdW1tYXJpc2UoXG4gICAgdG90YWwgPSBuKCksXG4gICAgbWVub3JfcXVlXzc1ID0gc3VtKFBBUlRJQ0lQQUNBTyAgPCA3NSksXG4gICAgcHJvcCA9IHJvdW5kKG1lbm9yX3F1ZV83NSAvIHRvdGFsLCAyKVxuICApXG5cbm1lbm9yXzc1JExPQ0FMIDwtIG1lbm9yXzc1JExPQ0FMICU+JVxuICBmYWN0b3IobGV2ZWxzID0gYyhcIjFcIiwgXCIyXCIpLCBsYWJlbHMgPSBjKFwiVXJiYW5vXCIsIFwiUnVyYWxcIikpXG5cblxubWVub3JfNzUgJT4lIFxuICBnZ3Bsb3QoYWVzKHggPSByZW9yZGVyKExPQ0FMLCAtcHJvcCksIHkgPSBwcm9wLCBmaWxsID0gTE9DQUwpKSArXG4gIGdlb21fYmFyKHN0YXQgPSBcImlkZW50aXR5XCIpICtcbiAgbGFicyh0aXRsZSA9IFwiUHJvcG9yw6fDo28gZGUgZXNjb2xhcyBjb20gbWVub3MgZGUgNzUlIGRlIHBhcnRpY2lwYcOnw6NvIHBvciByZWdpw6NvXCIsXG4gICAgICAgeCA9IFwiUmVnacOjb1wiLCB5ID0gXCJQcm9wb3LDp8Ojb1wiKSArXG4gIHRoZW1lX2J3KClcblxuXG5gYGAifQ== -->
+<pre class="r"><code>
+menor_75 &lt;- dados %&gt;%
+  group_by(LOCAL) %&gt;%
+  summarise(
+    total = n(),
+    menor_que_75 = sum(PARTICIPACAO  &lt; 75),
+    prop = round(menor_que_75 / total, 2)
+  )
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFuw6FsaXNlIFByb3ZhIEJyYXNpbCAyMDExIg0Kb3V0cHV0Og0KICBwZGZfZG9jdW1lbnQ6IGRlZmF1bHQNCiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdA0KLS0tDQoNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFLCBjYWNoZT1ULCBtZXNzYWdlPUYsIHdhcm5pbmc9RiwgZXJyb3I9RikNCmlmICghcmVxdWlyZSgicGFjbWFuIikpIGluc3RhbGwucGFja2FnZXMoInBhY21hbiIpDQpwYWNtYW46OnBfbG9hZCgidGlkeXZlcnNlIiwicmVhZHhsIikNCm9wdGlvbnMoc2NpcGVuPTApDQpgYGANCkxlbmRvIG9zIGRhZG9zOg0KYGBge3J9DQpzZXR3ZCgiLi4iKSAjIGFjZXNzYXIgb3MgZGFkb3MNCmFycXVpdm8gPC0gImRhZG9zL0Ftb3N0cmFfZzAxX0FkcmllbGx5X0FtYW5kYV9Fcmlja19SYXF1ZWwueGxzeCINCmFycXVpdm9fYW1vc3RyYSA8LSAiZGFkb3MvQW1vc3RyYV81MF9saW5oYXMueGxzeCINCg0KIyB2YXJpw6F2ZWlzIGdsb2JhaXMNCmRhZG9zIDwtIHJlYWRfZXhjZWwoYXJxdWl2bykgIyBjYXNvIHF1ZXJpYSB0ZXN0YXIgcGFyYSBhIGFtb3N0cmENCm4gPC0gbnJvdyhkYWRvcykgIyBjYXNvIGEgYW1vc3RyYSBzZWphIGFsdGVyYWRhDQppYyA8LSAxLjk2ICMgZGVmaW5pIGNvbSA5NSUNCmBgYA0KDQpEZXNjcmV2ZXIgYXMgY2FyYWN0ZXLDrXN0aWNhcyBkYXMgZXNjb2xhcyBlIG8gZGVzZW1wZW5obyBkZSBzZXVzIGVzdHVkYW50ZXMgbmEgUHJvdmEgZGUgQnJhc2lsIGVtIDIwMTEuDQoNCmBgYHtyfQ0KI05VTEwNCmBgYA0KDQoNCkVzdGltYXIgYSBwcm9wb3LDp8OjbyBkZSBlc2NvbGFzIHF1ZSBtZW5vcyBkZSA3NSUgZGUgc2V1cyBlc3R1ZGFudGVzIHBhcnRpY2lwYXJhbSBkYSBQcm92YSBCcmFzaWwgZW0gMjAxMS4NCg0KYGBge3J9DQpkYWRvcyRCQUlYQV9QQVJUSUNJUEFDQU8gPC0gZGFkb3MkUEFSVElDSVBBQ0FPIDwgNzUNCnByb3BvcmNhbyA8LSBtZWFuKGRhZG9zJEJBSVhBX1BBUlRJQ0lQQUNBTykNCnByaW50KHByb3BvcmNhbykNCg0KZXJyb19wYWRyYW8gPC0gc3FydChwcm9wb3JjYW8gKiAoMS1wcm9wb3JjYW8pL24pDQppY19pbmYgPC0gcHJvcG9yY2FvLWljKmVycm9fcGFkcmFvDQppY19zdXAgPC0gcHJvcG9yY2FvK2ljKmVycm9fcGFkcmFvDQoNCiMgY29sb3F1ZWkgOTUlIG1hcyBwb2RlcmlhIHNlciBvdXRybw0KY2F0KHNwcmludGYoIklDWyUuNGYgwrEgJS40Zl0iLCBwcm9wb3JjYW8sIGljICogZXJyb19wYWRyYW8pLCAiXG4iKQ0KY2F0KHNwcmludGYoIklDWyUuNGY7ICUuNGZdIiwgaWNfaW5mLCBpY19zdXApKQ0KIyBvYnM6IGVzY29saGVyIG8gbWFpcyB1c3VhbA0KYGBgDQpFc3RpbWFyIGEgcHJvZmljacOqbmNpYSBtw6lkaWEgZW0gTMOtbmd1YSBQb3J0dWd1ZXNhIGUgZW0gTWF0ZW3DoXRpY2EgZGFzIGVzY29sYXMgbmEgUHJvdmEgQnJhc2lsIGVtIDIwMTEuDQoNCmBgYHtyfQ0KIyBMw61uZ3VhIHBvcnR1Z3Vlc2ENCm1lZGlhX3B0IDwtIG1lYW4oZGFkb3MkTk9UQV9MUCkNCmVycm9fcHQgPC0gc2QoZGFkb3MkTk9UQV9MUCkvc3FydChuKQ0KaWNfbHBfaW5mIDwtIG1lZGlhX3B0IC0gaWMgKiBlcnJvX3B0DQppY19scF9zdXAgPC0gbWVkaWFfcHQgKyBpYyAqIGVycm9fcHQNCg0KY2F0KHNwcmludGYoIklDIGzDrW5ndWEgcG9ydHVndWVzYTogWyUuMmYgwrEgJS4yZl1cbiIsIG1lZGlhX3B0LCBpYyAqIGVycm9fcHQpKQ0KY2F0KHNwcmludGYoIklDIGzDrW5ndWEgcG9ydHVndWVzYTogWyUuMmY7ICUuMmZdXG4iLCBpY19scF9pbmYsIGljX2xwX3N1cCkpDQoNCiMgTWF0ZW3DoXRpY2ENCm1lZGlhX210IDwtIG1lYW4oZGFkb3MkTk9UQV9NVCkNCmVycm9fbXQgPC0gc2QoZGFkb3MkTk9UQV9NVCkvc3FydChuKQ0KaWNfbXRfaW5mIDwtIG1lZGlhX210IC0gaWMgKiBlcnJvX210DQppY19tdF9zdXAgPC0gbWVkaWFfbXQgKyBpYyAqIGVycm9fbXQNCg0KY2F0KHNwcmludGYoIklDIG1hdGVtw6F0aWNhOiBbJS4yZiDCsSAlLjJmXVxuIiwgbWVkaWFfbXQsIGljICogZXJyb19tdCkpDQpjYXQoc3ByaW50ZigiSUMgbWF0ZW3DoXRpY2E6IFslLjJmOyAlLjJmXVxuIiwgaWNfbXRfaW5mLCBpY19tdF9zdXApKQ0KYGBgDQoNCg0K</div>
+menor_75$LOCAL &lt;- menor_75$LOCAL %&gt;%
+  factor(levels = c(&quot;1&quot;, &quot;2&quot;), labels = c(&quot;Urbano&quot;, &quot;Rural&quot;))
+
+
+menor_75 %&gt;% 
+  ggplot(aes(x = reorder(LOCAL, -prop), y = prop, fill = LOCAL)) +
+  geom_bar(stat = &quot;identity&quot;) +
+  labs(title = &quot;Proporção de escolas com menos de 75% de participação por região&quot;,
+       x = &quot;Região&quot;, y = &quot;Proporção&quot;) +
+  theme_bw()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="analise-para-amostra-de-50" class="section level3">
+<h3>Analise para amostra de 50</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5tZW5vcl83NSA8LSBhbW9zdHJhICU+JVxuICBncm91cF9ieShMT0NBTCkgJT4lXG4gIHN1bW1hcmlzZShcbiAgICB0b3RhbCA9IG4oKSxcbiAgICBtZW5vcl9xdWVfNzUgPSBzdW0oUEFSVElDSVBBQ0FPICA8IDc1KSxcbiAgICBwcm9wID0gcm91bmQobWVub3JfcXVlXzc1IC8gdG90YWwsIDIpXG4gIClcblxubWVub3JfNzUkTE9DQUwgPC0gbWVub3JfNzUkTE9DQUwgJT4lXG4gIGZhY3RvcihsZXZlbHMgPSBjKFwiMVwiLCBcIjJcIiksIGxhYmVscyA9IGMoXCJVcmJhbm9cIiwgXCJSdXJhbFwiKSlcblxuXG5tZW5vcl83NSAlPiUgXG4gIGdncGxvdChhZXMoeCA9IHJlb3JkZXIoTE9DQUwsIC1wcm9wKSwgeSA9IHByb3AsIGZpbGwgPSBMT0NBTCkpICtcbiAgZ2VvbV9iYXIoc3RhdCA9IFwiaWRlbnRpdHlcIikgK1xuICBsYWJzKHRpdGxlID0gXCJQcm9wb3LDp8OjbyBkZSBlc2NvbGFzIGNvbSBtZW5vcyBkZSA3NSUgZGUgcGFydGljaXBhw6fDo28gcG9yIHJlZ2nDo29cIixcbiAgICAgICB4ID0gXCJSZWdpw6NvXCIsIHkgPSBcIlByb3BvcsOnw6NvXCIpICtcbiAgdGhlbWVfYncoKVxuXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+menor_75 &lt;- amostra %&gt;%
+  group_by(LOCAL) %&gt;%
+  summarise(
+    total = n(),
+    menor_que_75 = sum(PARTICIPACAO  &lt; 75),
+    prop = round(menor_que_75 / total, 2)
+  )
+
+menor_75$LOCAL &lt;- menor_75$LOCAL %&gt;%
+  factor(levels = c(&quot;1&quot;, &quot;2&quot;), labels = c(&quot;Urbano&quot;, &quot;Rural&quot;))
+
+
+menor_75 %&gt;% 
+  ggplot(aes(x = reorder(LOCAL, -prop), y = prop, fill = LOCAL)) +
+  geom_bar(stat = &quot;identity&quot;) +
+  labs(title = &quot;Proporção de escolas com menos de 75% de participação por região&quot;,
+       x = &quot;Região&quot;, y = &quot;Proporção&quot;) +
+  theme_bw()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="região-de-localização-da-escola" class="section level2">
+<h2>Região de localização da escola</h2>
+<div id="analise-para-amostra-de-200-1" class="section level3">
+<h3>Analise para amostra de 200</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5tZW5vcl83NSA8LSBkYWRvcyAlPiVcbiAgZ3JvdXBfYnkoUkVHKSAlPiVcbiAgc3VtbWFyaXNlKFxuICAgIHRvdGFsID0gbigpLFxuICAgIG1lbm9yX3F1ZV83NSA9IHN1bShQQVJUSUNJUEFDQU8gIDwgNzUpLFxuICAgIHByb3AgPSByb3VuZChtZW5vcl9xdWVfNzUgLyB0b3RhbCwgMilcbiAgKVxuXG5cbm1lbm9yXzc1ICU+JSBcbiAgZ2dwbG90KGFlcyh4ID0gcmVvcmRlcihSRUcsIC1wcm9wKSwgeSA9IHByb3AsIGZpbGwgPSBSRUcpKSArXG4gIGdlb21fYmFyKHN0YXQgPSBcImlkZW50aXR5XCIpICtcbiAgbGFicyh0aXRsZSA9IFwiUHJvcG9yw6fDo28gZGUgZXNjb2xhcyBjb20gbWVub3MgZGUgNzUlIGRlIHBhcnRpY2lwYcOnw6NvIHBvciByZWdpw6NvXCIsXG4gICAgICAgeCA9IFwiUmVnacOjb1wiLCB5ID0gXCJQcm9wb3LDp8Ojb1wiKSArXG4gIHNjYWxlX2ZpbGxfZGlzY3JldGUoXG4gICAgbGFiZWxzID0gYyhcIk5cIiA9IFwiTm9ydGVcIiwgXCJTXCIgPSBcIlN1bFwiLCBcIkNPXCIgPSBcIkNlbnRyby1PZXN0ZVwiLCBcIk5FXCIgPSBcIk5vcmRlc3RlXCIsIFwiU0VcIiA9IFwiU3VkZXN0ZVwiKVxuICApICtcbiAgdGhlbWVfYncoKVxuYGBgIn0= -->
+<pre class="r"><code>
+menor_75 &lt;- dados %&gt;%
+  group_by(REG) %&gt;%
+  summarise(
+    total = n(),
+    menor_que_75 = sum(PARTICIPACAO  &lt; 75),
+    prop = round(menor_que_75 / total, 2)
+  )
+
+
+menor_75 %&gt;% 
+  ggplot(aes(x = reorder(REG, -prop), y = prop, fill = REG)) +
+  geom_bar(stat = &quot;identity&quot;) +
+  labs(title = &quot;Proporção de escolas com menos de 75% de participação por região&quot;,
+       x = &quot;Região&quot;, y = &quot;Proporção&quot;) +
+  scale_fill_discrete(
+    labels = c(&quot;N&quot; = &quot;Norte&quot;, &quot;S&quot; = &quot;Sul&quot;, &quot;CO&quot; = &quot;Centro-Oeste&quot;, &quot;NE&quot; = &quot;Nordeste&quot;, &quot;SE&quot; = &quot;Sudeste&quot;)
+  ) +
+  theme_bw()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-plot-begin eyJoZWlnaHQiOjQzMi42MzI5LCJ3aWR0aCI6NzAwLCJkcGkiOi0xLCJzaXplX2JlaGF2aW9yIjowLCJjb25kaXRpb25zIjpbXX0= -->
+<p><img role="img" src="data:image/png;base64,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" /></p>
+<!-- rnb-plot-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbk5BXG5gYGAifQ== -->
+<pre class="r"><code>NA
+NA</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="analise-para-amostra-de-50-1" class="section level3">
+<h3>Analise para amostra de 50</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5tZW5vcl83NSA8LSBhbW9zdHJhICU+JVxuICBncm91cF9ieShSRUcpICU+JVxuICBzdW1tYXJpc2UoXG4gICAgdG90YWwgPSBuKCksXG4gICAgbWVub3JfcXVlXzc1ID0gc3VtKFBBUlRJQ0lQQUNBTyAgPCA3NSksXG4gICAgcHJvcCA9IHJvdW5kKG1lbm9yX3F1ZV83NSAvIHRvdGFsLCAyKVxuICApXG5cblxubWVub3JfNzUgJT4lIFxuICBnZ3Bsb3QoYWVzKHggPSByZW9yZGVyKFJFRywgLXByb3ApLCB5ID0gcHJvcCwgZmlsbCA9IFJFRykpICtcbiAgZ2VvbV9iYXIoc3RhdCA9IFwiaWRlbnRpdHlcIikgK1xuICBsYWJzKHRpdGxlID0gXCJQcm9wb3LDp8OjbyBkZSBlc2NvbGFzIGNvbSBtZW5vcyBkZSA3NSUgZGUgcGFydGljaXBhw6fDo28gcG9yIHJlZ2nDo29cIixcbiAgICAgICB4ID0gXCJSZWdpw6NvXCIsIHkgPSBcIlByb3BvcsOnw6NvXCIpICtcbiAgc2NhbGVfZmlsbF9kaXNjcmV0ZShcbiAgICBsYWJlbHMgPSBjKFwiTlwiID0gXCJOb3J0ZVwiLCBcIlNcIiA9IFwiU3VsXCIsIFwiQ09cIiA9IFwiQ2VudHJvLU9lc3RlXCIsIFwiTkVcIiA9IFwiTm9yZGVzdGVcIiwgXCJTRVwiID0gXCJTdWRlc3RlXCIpXG4gICkgK1xuICB0aGVtZV9idygpXG5cblxuYGBgIn0= -->
+<pre class="r"><code>
+menor_75 &lt;- amostra %&gt;%
+  group_by(REG) %&gt;%
+  summarise(
+    total = n(),
+    menor_que_75 = sum(PARTICIPACAO  &lt; 75),
+    prop = round(menor_que_75 / total, 2)
+  )
+
+
+menor_75 %&gt;% 
+  ggplot(aes(x = reorder(REG, -prop), y = prop, fill = REG)) +
+  geom_bar(stat = &quot;identity&quot;) +
+  labs(title = &quot;Proporção de escolas com menos de 75% de participação por região&quot;,
+       x = &quot;Região&quot;, y = &quot;Proporção&quot;) +
+  scale_fill_discrete(
+    labels = c(&quot;N&quot; = &quot;Norte&quot;, &quot;S&quot; = &quot;Sul&quot;, &quot;CO&quot; = &quot;Centro-Oeste&quot;, &quot;NE&quot; = &quot;Nordeste&quot;, &quot;SE&quot; = &quot;Sudeste&quot;)
+  ) +
+  theme_bw()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
+</div>
+</div>
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFuw6FsaXNlIFByb3ZhIEJyYXNpbCAyMDExIg0Kb3V0cHV0Og0KICBwZGZfZG9jdW1lbnQ6IGRlZmF1bHQNCiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdA0KLS0tDQoNCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFLCBjYWNoZT1ULCBtZXNzYWdlPUYsIHdhcm5pbmc9RiwgZXJyb3I9RikNCmlmICghcmVxdWlyZSgicGFjbWFuIikpIGluc3RhbGwucGFja2FnZXMoInBhY21hbiIpDQpwYWNtYW46OnBfbG9hZCgidGlkeXZlcnNlIiwicmVhZHhsIikNCm9wdGlvbnMoc2NpcGVuPTApDQpgYGANCkxlbmRvIG9zIGRhZG9zOg0KYGBge3J9DQpzZXR3ZCgiLi4iKSAjIGFjZXNzYXIgb3MgZGFkb3MNCmFycXVpdm8gPC0gImRhZG9zL0Ftb3N0cmFfZzAxX0FkcmllbGx5X0FtYW5kYV9Fcmlja19SYXF1ZWwueGxzeCINCmFycXVpdm9fYW1vc3RyYSA8LSAiZGFkb3MvQW1vc3RyYV81MF9saW5oYXMueGxzeCINCg0KIyB2YXJpw6F2ZWlzIGdsb2JhaXMNCmRhZG9zIDwtIHJlYWRfZXhjZWwoYXJxdWl2bykgIyBjYXNvIHF1ZXJpYSB0ZXN0YXIgcGFyYSBhIGFtb3N0cmENCmFtb3N0cmEgPC0gcmVhZF9leGNlbChhcnF1aXZvX2Ftb3N0cmEpDQpuIDwtIG5yb3coZGFkb3MpICMgY2FzbyBhIGFtb3N0cmEgc2VqYSBhbHRlcmFkYQ0KaWMgPC0gMS45NiAjIGRlZmluaSBjb20gOTUlDQpgYGANCg0KIyAxLiBEZXNjcmV2ZXIgYXMgY2FyYWN0ZXLDrXN0aWNhcyBkYXMgZXNjb2xhcyBlIG8gZGVzZW1wZW5obyBkZSBzZXVzIGVzdHVkYW50ZXMgbmEgUHJvdmEgZGUgQnJhc2lsIGVtIDIwMTEuDQoNCmBgYHtyfQ0KI05VTEwNCmBgYA0KDQoNCiMgMi4gRXN0aW1hciBhIHByb3BvcsOnw6NvIGRlIGVzY29sYXMgcXVlIG1lbm9zIGRlIDc1JSBkZSBzZXVzIGVzdHVkYW50ZXMgcGFydGljaXBhcmFtIGRhIFByb3ZhIEJyYXNpbCBlbSAyMDExLg0KDQpgYGB7cn0NCmRhZG9zJEJBSVhBX1BBUlRJQ0lQQUNBTyA8LSBkYWRvcyRQQVJUSUNJUEFDQU8gPCA3NQ0KcHJvcG9yY2FvIDwtIG1lYW4oZGFkb3MkQkFJWEFfUEFSVElDSVBBQ0FPKQ0KcHJpbnQocHJvcG9yY2FvKQ0KDQplcnJvX3BhZHJhbyA8LSBzcXJ0KHByb3BvcmNhbyAqICgxLXByb3BvcmNhbykvbikNCmljX2luZiA8LSBwcm9wb3JjYW8taWMqZXJyb19wYWRyYW8NCmljX3N1cCA8LSBwcm9wb3JjYW8raWMqZXJyb19wYWRyYW8NCg0KIyBjb2xvcXVlaSA5NSUgbWFzIHBvZGVyaWEgc2VyIG91dHJvDQpjYXQoc3ByaW50ZigiSUNbJS40ZiDCsSAlLjRmXSIsIHByb3BvcmNhbywgaWMgKiBlcnJvX3BhZHJhbyksICJcbiIpDQpjYXQoc3ByaW50ZigiSUNbJS40ZjsgJS40Zl0iLCBpY19pbmYsIGljX3N1cCkpDQojIG9iczogZXNjb2xoZXIgbyBtYWlzIHVzdWFsDQpgYGANCiMzLiBFc3RpbWFyIGEgcHJvZmljacOqbmNpYSBtw6lkaWEgZW0gTMOtbmd1YSBQb3J0dWd1ZXNhIGUgZW0gTWF0ZW3DoXRpY2EgZGFzIGVzY29sYXMgbmEgUHJvdmEgQnJhc2lsIGVtIDIwMTEuDQoNCmBgYHtyfQ0KIyBMw61uZ3VhIHBvcnR1Z3Vlc2ENCm1lZGlhX3B0IDwtIG1lYW4oZGFkb3MkTk9UQV9MUCkNCmVycm9fcHQgPC0gc2QoZGFkb3MkTk9UQV9MUCkvc3FydChuKQ0KaWNfbHBfaW5mIDwtIG1lZGlhX3B0IC0gaWMgKiBlcnJvX3B0DQppY19scF9zdXAgPC0gbWVkaWFfcHQgKyBpYyAqIGVycm9fcHQNCg0KY2F0KHNwcmludGYoIklDIGzDrW5ndWEgcG9ydHVndWVzYTogWyUuMmYgwrEgJS4yZl1cbiIsIG1lZGlhX3B0LCBpYyAqIGVycm9fcHQpKQ0KY2F0KHNwcmludGYoIklDIGzDrW5ndWEgcG9ydHVndWVzYTogWyUuMmY7ICUuMmZdXG4iLCBpY19scF9pbmYsIGljX2xwX3N1cCkpDQoNCiMgTWF0ZW3DoXRpY2ENCm1lZGlhX210IDwtIG1lYW4oZGFkb3MkTk9UQV9NVCkNCmVycm9fbXQgPC0gc2QoZGFkb3MkTk9UQV9NVCkvc3FydChuKQ0KaWNfbXRfaW5mIDwtIG1lZGlhX210IC0gaWMgKiBlcnJvX210DQppY19tdF9zdXAgPC0gbWVkaWFfbXQgKyBpYyAqIGVycm9fbXQNCg0KY2F0KHNwcmludGYoIklDIG1hdGVtw6F0aWNhOiBbJS4yZiDCsSAlLjJmXVxuIiwgbWVkaWFfbXQsIGljICogZXJyb19tdCkpDQpjYXQoc3ByaW50ZigiSUMgbWF0ZW3DoXRpY2E6IFslLjJmOyAlLjJmXVxuIiwgaWNfbXRfaW5mLCBpY19tdF9zdXApKQ0KYGBgDQoNCg0KDQojIDguIENvbXBhcmFyIGEgcHJvcG9yw6fDo28gZGUgZXNjb2xhcyBxdWUgbWVub3MgZGUgNzUlIGRlIHNldXMgZXN0dWRhbnRlcyBwYXJ0aWNpcGFyYW0gZGEgUHJvdmEgQnJhc2lsIGVtIDIwMTEgc2VndW5kbzoNCg0KIyMgTG9jYWwgZGEgZXNjb2xhDQoNCiMjIyBBbmFsaXNlIHBhcmEgYW1vc3RyYSBkZSAyMDANCg0KYGBge3J9DQoNCm1lbm9yXzc1IDwtIGRhZG9zICU+JQ0KICBncm91cF9ieShMT0NBTCkgJT4lDQogIHN1bW1hcmlzZSgNCiAgICB0b3RhbCA9IG4oKSwNCiAgICBtZW5vcl9xdWVfNzUgPSBzdW0oUEFSVElDSVBBQ0FPICA8IDc1KSwNCiAgICBwcm9wID0gcm91bmQobWVub3JfcXVlXzc1IC8gdG90YWwsIDIpDQogICkNCg0KbWVub3JfNzUkTE9DQUwgPC0gbWVub3JfNzUkTE9DQUwgJT4lDQogIGZhY3RvcihsZXZlbHMgPSBjKCIxIiwgIjIiKSwgbGFiZWxzID0gYygiVXJiYW5vIiwgIlJ1cmFsIikpDQoNCg0KbWVub3JfNzUgJT4lIA0KICBnZ3Bsb3QoYWVzKHggPSByZW9yZGVyKExPQ0FMLCAtcHJvcCksIHkgPSBwcm9wLCBmaWxsID0gTE9DQUwpKSArDQogIGdlb21fYmFyKHN0YXQgPSAiaWRlbnRpdHkiKSArDQogIGxhYnModGl0bGUgPSAiUHJvcG9yw6fDo28gZGUgZXNjb2xhcyBjb20gbWVub3MgZGUgNzUlIGRlIHBhcnRpY2lwYcOnw6NvIHBvciByZWdpw6NvIiwNCiAgICAgICB4ID0gIlJlZ2nDo28iLCB5ID0gIlByb3BvcsOnw6NvIikgKw0KICB0aGVtZV9idygpDQoNCg0KYGBgDQoNCiMjIyBBbmFsaXNlIHBhcmEgYW1vc3RyYSBkZSA1MA0KDQpgYGB7cn0NCg0KbWVub3JfNzUgPC0gYW1vc3RyYSAlPiUNCiAgZ3JvdXBfYnkoTE9DQUwpICU+JQ0KICBzdW1tYXJpc2UoDQogICAgdG90YWwgPSBuKCksDQogICAgbWVub3JfcXVlXzc1ID0gc3VtKFBBUlRJQ0lQQUNBTyAgPCA3NSksDQogICAgcHJvcCA9IHJvdW5kKG1lbm9yX3F1ZV83NSAvIHRvdGFsLCAyKQ0KICApDQoNCm1lbm9yXzc1JExPQ0FMIDwtIG1lbm9yXzc1JExPQ0FMICU+JQ0KICBmYWN0b3IobGV2ZWxzID0gYygiMSIsICIyIiksIGxhYmVscyA9IGMoIlVyYmFubyIsICJSdXJhbCIpKQ0KDQoNCm1lbm9yXzc1ICU+JSANCiAgZ2dwbG90KGFlcyh4ID0gcmVvcmRlcihMT0NBTCwgLXByb3ApLCB5ID0gcHJvcCwgZmlsbCA9IExPQ0FMKSkgKw0KICBnZW9tX2JhcihzdGF0ID0gImlkZW50aXR5IikgKw0KICBsYWJzKHRpdGxlID0gIlByb3BvcsOnw6NvIGRlIGVzY29sYXMgY29tIG1lbm9zIGRlIDc1JSBkZSBwYXJ0aWNpcGHDp8OjbyBwb3IgcmVnacOjbyIsDQogICAgICAgeCA9ICJSZWdpw6NvIiwgeSA9ICJQcm9wb3LDp8OjbyIpICsNCiAgdGhlbWVfYncoKQ0KDQoNCmBgYA0KDQoNCiMjIFJlZ2nDo28gZGUgbG9jYWxpemHDp8OjbyBkYSBlc2NvbGENCg0KIyMjIEFuYWxpc2UgcGFyYSBhbW9zdHJhIGRlIDIwMA0KYGBge3J9DQoNCm1lbm9yXzc1IDwtIGRhZG9zICU+JQ0KICBncm91cF9ieShSRUcpICU+JQ0KICBzdW1tYXJpc2UoDQogICAgdG90YWwgPSBuKCksDQogICAgbWVub3JfcXVlXzc1ID0gc3VtKFBBUlRJQ0lQQUNBTyAgPCA3NSksDQogICAgcHJvcCA9IHJvdW5kKG1lbm9yX3F1ZV83NSAvIHRvdGFsLCAyKQ0KICApDQoNCg0KbWVub3JfNzUgJT4lIA0KICBnZ3Bsb3QoYWVzKHggPSByZW9yZGVyKFJFRywgLXByb3ApLCB5ID0gcHJvcCwgZmlsbCA9IFJFRykpICsNCiAgZ2VvbV9iYXIoc3RhdCA9ICJpZGVudGl0eSIpICsNCiAgbGFicyh0aXRsZSA9ICJQcm9wb3LDp8OjbyBkZSBlc2NvbGFzIGNvbSBtZW5vcyBkZSA3NSUgZGUgcGFydGljaXBhw6fDo28gcG9yIHJlZ2nDo28iLA0KICAgICAgIHggPSAiUmVnacOjbyIsIHkgPSAiUHJvcG9yw6fDo28iKSArDQogIHNjYWxlX2ZpbGxfZGlzY3JldGUoDQogICAgbGFiZWxzID0gYygiTiIgPSAiTm9ydGUiLCAiUyIgPSAiU3VsIiwgIkNPIiA9ICJDZW50cm8tT2VzdGUiLCAiTkUiID0gIk5vcmRlc3RlIiwgIlNFIiA9ICJTdWRlc3RlIikNCiAgKSArDQogIHRoZW1lX2J3KCkNCg0KDQpgYGANCg0KIyMjIEFuYWxpc2UgcGFyYSBhbW9zdHJhIGRlIDUwDQoNCmBgYHtyfQ0KDQptZW5vcl83NSA8LSBhbW9zdHJhICU+JQ0KICBncm91cF9ieShSRUcpICU+JQ0KICBzdW1tYXJpc2UoDQogICAgdG90YWwgPSBuKCksDQogICAgbWVub3JfcXVlXzc1ID0gc3VtKFBBUlRJQ0lQQUNBTyAgPCA3NSksDQogICAgcHJvcCA9IHJvdW5kKG1lbm9yX3F1ZV83NSAvIHRvdGFsLCAyKQ0KICApDQoNCg0KbWVub3JfNzUgJT4lIA0KICBnZ3Bsb3QoYWVzKHggPSByZW9yZGVyKFJFRywgLXByb3ApLCB5ID0gcHJvcCwgZmlsbCA9IFJFRykpICsNCiAgZ2VvbV9iYXIoc3RhdCA9ICJpZGVudGl0eSIpICsNCiAgbGFicyh0aXRsZSA9ICJQcm9wb3LDp8OjbyBkZSBlc2NvbGFzIGNvbSBtZW5vcyBkZSA3NSUgZGUgcGFydGljaXBhw6fDo28gcG9yIHJlZ2nDo28iLA0KICAgICAgIHggPSAiUmVnacOjbyIsIHkgPSAiUHJvcG9yw6fDo28iKSArDQogIHNjYWxlX2ZpbGxfZGlzY3JldGUoDQogICAgbGFiZWxzID0gYygiTiIgPSAiTm9ydGUiLCAiUyIgPSAiU3VsIiwgIkNPIiA9ICJDZW50cm8tT2VzdGUiLCAiTkUiID0gIk5vcmRlc3RlIiwgIlNFIiA9ICJTdWRlc3RlIikNCiAgKSArDQogIHRoZW1lX2J3KCkNCg0KDQpgYGANCg0KDQoNCg0KDQo=</div>
 
 
 
