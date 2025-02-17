@@ -68,6 +68,85 @@ ic_mt_sup <- media_mt + ic * erro_mt
 cat(sprintf("IC matemática: [%.2f ± %.2f]\n", media_mt, ic * erro_mt))
 cat(sprintf("IC matemática: [%.2f; %.2f]\n", ic_mt_inf, ic_mt_sup))
 ```
+# 4: Verificar se houve melhora do resultado da Prova Brasil de 2009 para 2011
+
+```{r}
+
+cat("Nomes das colunas:\n")
+print(colnames(amostra))
+
+# Verificar se há dados nas colunas de interesse
+cat("\nQuantidade de valores não-NA em Língua Portuguesa (NOTA_LP):", sum(!is.na(amostra$NOTA_LP)), "\n")
+cat("Quantidade de valores não-NA em Matemática (NOTA_MT):", sum(!is.na(amostra$NOTA_MT)), "\n")
+
+# Verificar a estrutura dos dados
+cat("\nEstrutura dos dados:\n")
+str(amostra)
+
+
+if (sum(!is.na(amostra$NOTA_LP)) > 0 && sum(!is.na(amostra$NOTA_MT)) > 0) {
+  # Calcular as médias das notas em 2011 (ignorando NAs)
+  media_lp_2011 <- mean(amostra$NOTA_LP, na.rm = TRUE)
+  media_mat_2011 <- mean(amostra$NOTA_MT, na.rm = TRUE)
+
+  # Valores de 2009
+  media_lp_2009 <- 184.3
+  media_mat_2009 <- 204.3
+
+  # Comparando as médias
+  melhoria_lp <- media_lp_2011 - media_lp_2009
+  melhoria_mat <- media_mat_2011 - media_mat_2009
+
+  # Exibindo os resultados
+  cat("\nMédia de Língua Portuguesa em 2011 (amostra de 50 escolas):", media_lp_2011, "\n")
+  cat("Média de Matemática em 2011 (amostra de 50 escolas):", media_mat_2011, "\n")
+  cat("Melhoria em Língua Portuguesa de 2009 para 2011:", melhoria_lp, "\n")
+  cat("Melhoria em Matemática de 2009 para 2011:", melhoria_mat, "\n")
+
+  # Intervalo de confiança para a média de Língua Portuguesa
+  erro_padrao_lp <- sd(amostra$NOTA_LP, na.rm = TRUE) / sqrt(nrow(amostra))
+  ic_inf_lp <- media_lp_2011 - ic * erro_padrao_lp
+  ic_sup_lp <- media_lp_2011 + ic * erro_padrao_lp
+
+  cat(sprintf("IC para Língua Portuguesa [%.4f; %.4f]", ic_inf_lp, ic_sup_lp), "\n")
+
+  # Intervalo de confiança para a média de Matemática
+  erro_padrao_mat <- sd(amostra$NOTA_MT, na.rm = TRUE) / sqrt(nrow(amostra))
+  ic_inf_mat <- media_mat_2011 - ic * erro_padrao_mat
+  ic_sup_mat <- media_mat_2011 + ic * erro_padrao_mat
+
+  cat(sprintf("IC para Matemática [%.4f; %.4f]", ic_inf_mat, ic_sup_mat), "\n")
+} else {
+  cat("\nErro: As colunas de notas (NOTA_LP ou NOTA_MT) estão vazias ou contêm apenas NA.\n")
+}
+```
+
+
+#  5: Verificar se as notas em Língua Portuguesa e Matemática são normalmente distribuídas
+
+```{r}
+
+if (sum(!is.na(amostra$NOTA_LP)) > 0 && sum(!is.na(amostra$NOTA_MT)) > 0) {
+  # Teste de Shapiro-Wilk para normalidade (ignorando NAs)
+  shapiro_lp <- shapiro.test(na.omit(amostra$NOTA_LP))
+  shapiro_mat <- shapiro.test(na.omit(amostra$NOTA_MT))
+
+  # Exibindo os resultados dos testes
+  cat("\nTeste de Shapiro-Wilk para Língua Portuguesa (amostra de 50 escolas):\n")
+  print(shapiro_lp)
+  cat("\nTeste de Shapiro-Wilk para Matemática (amostra de 50 escolas):\n")
+  print(shapiro_mat)
+
+  # Q-Q plots para verificação visual da normalidade (ignorando NAs)
+  par(mfrow = c(1, 2))
+  qqnorm(na.omit(amostra$NOTA_LP), main = "Q-Q Plot Língua Portuguesa (amostra de 50 escolas)")
+  qqline(na.omit(amostra$NOTA_LP))
+  qqnorm(na.omit(amostra$NOTA_MT), main = "Q-Q Plot Matemática (amostra de 50 escolas)")
+  qqline(na.omit(amostra$NOTA_MT))
+} else {
+  cat("\nErro: As colunas de notas (NOTA_LP ou NOTA_MT) estão vazias ou contêm apenas NA.\n")
+}
+```
 
 
 
