@@ -8,7 +8,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache=T, message=F, warning=F, error=F)
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load("tidyverse","readxl")
+pacman::p_load("tidyverse","readxl","shiny")
 options(scipen=0)
 ```
 Lendo os dados:
@@ -27,7 +27,56 @@ ic <- 1.96 # defini com 95%
 # 1. Descrever as características das escolas e o desempenho de seus estudantes na Prova de Brasil em 2011.
 
 ```{r}
-#NULL
+ui <- fluidPage(
+  titlePanel("Dashboard Interativo Prova Brasil 2011"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("x_var", 
+                  label = "Escolha a variável no eixo X",
+                  choices = c("PARTICIPACAO", "TAM_ESCOLA", "MATRICULADOS","TAM_MUN", "ADM", "LOCAL", "REG"),
+                  selected = "PARTICIPACAO"),
+      
+      selectInput("y_var", 
+                  label = "Escolha a variável no eixo Y",
+                  choices = c("NOTA_LP", "NOTA_MT"),
+                  selected = "NOTA_LP"),
+      
+      selectInput("color_var", 
+                  label = "Escolha a variável para cor",
+                  choices = c("REG", "LOCAL", "ADM"),
+                  selected = "REG")
+    ),
+    
+    mainPanel(
+      plotlyOutput("grafico")
+    )
+  )
+)
+
+server <- function(input, output){
+
+  output$grafico <- renderPlotly({
+    x_var <- input$x_var
+    y_var <- input$y_var
+    color_var <- input$color_var
+    
+    plot_ly(data = dados, 
+            x = ~get(x_var), 
+            y = ~get(y_var), 
+            type = 'scatter', 
+            mode = 'markers', 
+            color = ~get(color_var), 
+            text = ~paste("ID: ", ID, "<br>Local: ", LOCAL),
+            marker = list(size = 10)) %>%
+      layout(title = paste("Relação entre", x_var, "e", y_var),
+             xaxis = list(title = x_var),
+             yaxis = list(title = y_var))
+  })
+}
+
+shinyApp(ui = ui, server = server)
+
 ```
 
 
