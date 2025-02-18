@@ -8,7 +8,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache=T, message=F, warning=F, error=F)
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load("tidyverse","readxl","shiny")
+pacman::p_load("tidyverse","readxl","shiny", "plotly")
 options(scipen=0)
 ```
 Lendo os dados:
