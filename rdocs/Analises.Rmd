@@ -148,6 +148,7 @@ if (sum(!is.na(amostra$NOTA_LP)) > 0 && sum(!is.na(amostra$NOTA_MT)) > 0) {
 }
 ```
 
+#  6: Questão 6
 
 
 # 8. Comparar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011 segundo:
