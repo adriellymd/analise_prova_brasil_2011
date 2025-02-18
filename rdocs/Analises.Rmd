@@ -28,7 +28,7 @@ ic <- 1.96 # defini com 95%
 
 # 1. Descrever as características das escolas e o desempenho de seus estudantes na Prova de Brasil em 2011.
 
-```{r}
+
 ui <- fluidPage(
   titlePanel("Dashboard Interativo Prova Brasil 2011"),
   
@@ -79,7 +79,7 @@ server <- function(input, output){
 
 shinyApp(ui = ui, server = server)
 
-```
+
 
 
 # 2. Estimar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011.
