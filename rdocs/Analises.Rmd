@@ -230,6 +230,8 @@ t.test(mat_urb_amo$NOTA_MT, mat_rur_amo$NOTA_MT)
 
 # Com essa ressalva, ao fazer o teste (que nem deveria ser feito), não há evidência de que existe diferença com 95% de significância entre a média em Matemática de acordo com o local da escola, pois o novo p-valor = 0.06153 aponta que o erro sobre essa afirmação é maior que 5%.
 
+```
+
 # 7. Verificar se existe diferença significativa entre as notas de Língua Portuguesa e Matemática.
 
 ```{r}
