@@ -199,7 +199,57 @@ if (sum(!is.na(amostra$NOTA_LP)) > 0 && sum(!is.na(amostra$NOTA_MT)) > 0) {
 }
 ```
 
-#  6: Questão 6
+#  6: Comparar a proficiência média em Matemática segundo o local da escola. Você diria que a proficiência em
+Matemática é maior em escolas urbanas?
+
+```{r}
+
+# Como não temos a variância e média populacional, somente amostral, o mais indicado é utilizar o Teste de Student. Logo:
+
+mat_urb <- dados %>%
+  filter(LOCAL == "1")
+
+mat_rur <- dados %>%
+  filter(LOCAL == "2")
+
+t.test(mat_urb$NOTA_MT, mat_rur$NOTA_MT)
+
+# De acordo com o teste, há evidência, com 95% de significância, de que existe uma diferença entre a média em Matemática de acordo com o local da escola, pois o p-valor = 0.0001738
+
+# Fazendo o mesmo teste para a amostra com 50 observações, temos:
+
+mat_urb_amo <- amostra %>%
+  filter(LOCAL == "1")
+
+mat_rur_amo <- amostra %>%
+  filter(LOCAL == "2")
+
+t.test(mat_urb_amo$NOTA_MT, mat_rur_amo$NOTA_MT)
+
+# Ao diminuir a amostra, observa-se que há somente 7 observações sobre as notas em Matemática provinientes de escolas rurais, o que impossibilita qualquer afirmação a respeito da população. 
+
+# Com essa ressalva, ao fazer o teste (que nem deveria ser feito), não há evidência de que existe diferença com 95% de significância entre a média em Matemática de acordo com o local da escola, pois o novo p-valor = 0.06153 aponta que o erro sobre essa afirmação é maior que 5%.
+
+# 7. Verificar se existe diferença significativa entre as notas de Língua Portuguesa e Matemática.
+
+```{r}
+
+# Ao verificar na amostra com 200 observações, temos:
+
+t.test(dados$NOTA_MT, dados$NOTA_LP)
+
+# De acordo com o teste, há evidência, com 95% de significância, de que existe diferença entre as notas de Língua Portuguesa e Matemática, pois o p-valor = 2.54 e-12 indica que a probabilidade dessa afirmação estar errada é muito baixa. 
+
+# Ao verificar para a amostra com 50 observações, temos:
+
+t.test(amostra$NOTA_MT, amostra$NOTA_LP)
+
+# De acordo com o teste, ainda há evidência, com 95% de significância, de que existe diferença entre as notas de Língua Portuguesa e Matemática nessa amostra menor, pois o p-valor = 0.0002944 indica que a probabilidade dessa afirmação estar errada ainda é muito baixa. 
+
+# Percebe-se também que a média da amostra com 50 observações é diferente da média da amostra com 200 observações.
+
+```
+
 
 
 # 8. Comparar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011 segundo:
