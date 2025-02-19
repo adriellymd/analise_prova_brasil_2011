@@ -199,8 +199,7 @@ if (sum(!is.na(amostra$NOTA_LP)) > 0 && sum(!is.na(amostra$NOTA_MT)) > 0) {
 }
 ```
 
-#  6: Comparar a proficiência média em Matemática segundo o local da escola. Você diria que a proficiência em
-Matemática é maior em escolas urbanas?
+#  6: Comparar a proficiência média em Matemática segundo o local da escola. Você diria que a proficiência em Matemática é maior em escolas urbanas?
 
 ```{r}
 
@@ -251,8 +250,6 @@ t.test(amostra$NOTA_MT, amostra$NOTA_LP)
 # Percebe-se também que a média da amostra com 50 observações é diferente da média da amostra com 200 observações.
 
 ```
-
-
 
 # 8. Comparar a proporção de escolas que menos de 75% de seus estudantes participaram da Prova Brasil em 2011 segundo:
 
