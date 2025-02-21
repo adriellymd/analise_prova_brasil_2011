@@ -203,7 +203,7 @@ if (sum(!is.na(amostra$NOTA_LP)) > 0 && sum(!is.na(amostra$NOTA_MT)) > 0) {
 
 ```{r}
 
-# Como não temos a variância e média populacional, somente amostral, o mais indicado é utilizar o Teste de Student. Logo:
+# Como não temos a variância e média populacional, somente amostral, o mais indicado é utilizar o Teste T de Student. Logo:
 
 mat_urb <- dados %>%
   filter(LOCAL == "1")
@@ -211,9 +211,15 @@ mat_urb <- dados %>%
 mat_rur <- dados %>%
   filter(LOCAL == "2")
 
-t.test(mat_urb$NOTA_MT, mat_rur$NOTA_MT)
+# Antes, porém, é necessário comparar as variâncias
 
-# De acordo com o teste, há evidência, com 95% de significância, de que existe uma diferença entre a média em Matemática de acordo com o local da escola, pois o p-valor = 0.0001738
+var.test(mat_urb$NOTA_MT, mat_rur$NOTA_MT, null.value = 1)
+
+# Como as variâncias populacionais estimadas são iguais (p-valor > 0.05), fazemos o seguinte teste:
+
+t.test(mat_urb$NOTA_MT, mat_rur$NOTA_MT, mu = 0, var.equal = TRUE)
+
+# De acordo com o teste, há evidência, com 95% de significância, de que existe uma diferença entre a média em Matemática de acordo com o local da escola (p-valor < 0.05)
 
 # Fazendo o mesmo teste para a amostra com 50 observações, temos:
 
@@ -223,11 +229,17 @@ mat_urb_amo <- amostra %>%
 mat_rur_amo <- amostra %>%
   filter(LOCAL == "2")
 
-t.test(mat_urb_amo$NOTA_MT, mat_rur_amo$NOTA_MT)
+# Antes, porém, é necessário comparar as variâncias
+
+var.test(mat_urb_amo$NOTA_MT, mat_rur_amo$NOTA_MT, null.value = 1)
+
+# Como as variâncias populacionais estimadas são iguais (p-valor > 0.05), fazemos o seguinte teste:
+
+t.test(mat_urb_amo$NOTA_MT, mat_rur_amo$NOTA_MT, mu = 0, var.equal = TRUE)
 
 # Ao diminuir a amostra, observa-se que há somente 7 observações sobre as notas em Matemática provinientes de escolas rurais, o que impossibilita qualquer afirmação a respeito da população. 
 
-# Com essa ressalva, ao fazer o teste (que nem deveria ser feito), não há evidência de que existe diferença com 95% de significância entre a média em Matemática de acordo com o local da escola, pois o novo p-valor = 0.06153 aponta que o erro sobre essa afirmação é maior que 5%.
+# Com essa ressalva, ao fazer o teste (que nem deveria ser feito), não há evidência de que existe diferença com 95% de significância entre a média em Matemática de acordo com o local da escola, pois o novo p-valor = 0.06153 aponta que o erro sobre essa afirmação é maior que os 5% da significância dada.
 
 ```
 
@@ -235,19 +247,27 @@ t.test(mat_urb_amo$NOTA_MT, mat_rur_amo$NOTA_MT)
 
 ```{r}
 
-# Ao verificar na amostra com 200 observações, temos:
+# Primeiro, vamos verificar a variância estimada das duas populações
 
-t.test(dados$NOTA_MT, dados$NOTA_LP)
+var.test(dados$NOTA_MT, dados$NOTA_LP, null.value = 1)
 
-# De acordo com o teste, há evidência, com 95% de significância, de que existe diferença entre as notas de Língua Portuguesa e Matemática, pois o p-valor = 2.54 e-12 indica que a probabilidade dessa afirmação estar errada é muito baixa. 
+# Como as variâncias estimadas são diferentes (p-valor < 0,05), fazemos o seguinte teste para a amostra com 200 observações:
 
-# Ao verificar para a amostra com 50 observações, temos:
+t.test(dados$NOTA_MT, dados$NOTA_LP, mu = 0, var.equal = FALSE)
 
-t.test(amostra$NOTA_MT, amostra$NOTA_LP)
+# De acordo com o teste, há evidência, com 95% de significância, de que existe diferença entre as notas de Língua Portuguesa e Matemática (p-valor < 0.05). 
 
-# De acordo com o teste, ainda há evidência, com 95% de significância, de que existe diferença entre as notas de Língua Portuguesa e Matemática nessa amostra menor, pois o p-valor = 0.0002944 indica que a probabilidade dessa afirmação estar errada ainda é muito baixa. 
+# Ao verificar para a amostra com 50 observações, fazemos primeiro o teste das variâncias:
 
-# Percebe-se também que a média da amostra com 50 observações é diferente da média da amostra com 200 observações.
+var.test(dados$NOTA_MT, dados$NOTA_LP, null.value = 1)
+
+# Como as variâncias estimadas são diferentes (p-valor < 0,05), fazemos o seguinte teste para a amostra com 50 observações:
+
+t.test(amostra$NOTA_MT, amostra$NOTA_LP, mu = 0, var.equal = FALSE)
+
+# De acordo com o teste, ainda há evidência, com 95% de significância, de que, nessa amostra menor com 50 observações, existe diferença entre as notas de Língua Portuguesa e Matemática (p-valor < 0.05). 
+
+# Percebe-se também que as médias das notas de MT e LP na amostra com 50 observações são diferentes das médias na amostra com 200 observações, como esperado.
 
 ```
 
