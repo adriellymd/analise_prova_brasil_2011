@@ -259,11 +259,11 @@ t.test(dados$NOTA_MT, dados$NOTA_LP, mu = 0, var.equal = FALSE)
 
 # Ao verificar para a amostra com 50 observações, fazemos primeiro o teste das variâncias:
 
-var.test(dados$NOTA_MT, dados$NOTA_LP, null.value = 1)
+var.test(amostra$NOTA_MT, amostra$NOTA_LP, null.value = 1)
 
-# Como as variâncias estimadas são diferentes (p-valor < 0,05), fazemos o seguinte teste para a amostra com 50 observações:
+# Como as variâncias estimadas são iguais (p-valor > 0,05), fazemos o seguinte teste para a amostra com 50 observações:
 
-t.test(amostra$NOTA_MT, amostra$NOTA_LP, mu = 0, var.equal = FALSE)
+t.test(amostra$NOTA_MT, amostra$NOTA_LP, mu = 0, var.equal = TRUE)
 
 # De acordo com o teste, ainda há evidência, com 95% de significância, de que, nessa amostra menor com 50 observações, existe diferença entre as notas de Língua Portuguesa e Matemática (p-valor < 0.05). 
 
