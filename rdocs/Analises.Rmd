@@ -10,7 +10,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache=T, message=F, warning=F, error=F)
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load("tidyverse","readxl","shiny", "plotly")
+pacman::p_load("tidyverse","readxl","shiny", "plotly", "dichromat")
 options(scipen=0)
 ```
 Lendo os dados:
@@ -296,6 +296,7 @@ menor_75 %>%
   geom_bar(stat = "identity") +
   labs(title = "Proporção de escolas com menos de 75% de participação por região",
        x = "Região", y = "Proporção") +
+  scale_fill_manual(values = c(dichromat::colorschemes[[17]][3], dichromat::colorschemes[[17]][13])) +
   theme_bw()
 
 
@@ -322,6 +323,7 @@ menor_75 %>%
   geom_bar(stat = "identity") +
   labs(title = "Proporção de escolas com menos de 75% de participação por região",
        x = "Região", y = "Proporção") +
+  scale_fill_manual(values = c(dichromat::colorschemes[[17]][3], dichromat::colorschemes[[17]][13]))+
   theme_bw()
 
 
@@ -350,6 +352,7 @@ menor_75 %>%
   scale_fill_discrete(
     labels = c("N" = "Norte", "S" = "Sul", "CO" = "Centro-Oeste", "NE" = "Nordeste", "SE" = "Sudeste")
   ) +
+  scale_fill_manual(values = c(dichromat::colorschemes[[17]][1], dichromat::colorschemes[[17]][6], dichromat::colorschemes[[17]][11], dichromat::colorschemes[[17]][16], dichromat::colorschemes[[17]][25])) +
   theme_bw()
 
 
@@ -376,6 +379,7 @@ menor_75 %>%
   scale_fill_discrete(
     labels = c("N" = "Norte", "S" = "Sul", "CO" = "Centro-Oeste", "NE" = "Nordeste", "SE" = "Sudeste")
   ) +
+  scale_fill_manual(values = c(dichromat::colorschemes[[17]][1], dichromat::colorschemes[[17]][6], dichromat::colorschemes[[17]][11], dichromat::colorschemes[[17]][16], dichromat::colorschemes[[17]][25])) +
   theme_bw()
 
 
